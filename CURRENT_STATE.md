@@ -16,6 +16,30 @@ The current bottleneck is now:
 
 Current operating mode: **MANUAL TOPVIEW PROMPT WORKFLOW ONLY**.
 
+## 0-Priority continuity authority
+The project's core design decisions and exact reusable prompt library are preserved in:
+
+**`CORE_DESIGN_AND_PROMPTS.md`**
+
+This is the 0-priority continuity source for:
+- core format/design principles
+- `SET_MASTER_01 → CAST_MASTER → I2V` architecture
+- set specification
+- character visual constraints
+- compact style/set/character prompt blocks
+- exact `SET_MASTER_01` prompt
+- exact `CAST_MASTER` template
+- exact baseline I2V prompt
+- current lip/eye/reaction micro-controls
+- earlier successful long CHAR_06 prompt
+- known failure history and decisions
+- QC priority order
+- prompt-budget rules
+
+If older documents conflict with the current production method, use **`CORE_DESIGN_AND_PROMPTS.md` + `CURRENT_STATE.md`** as authority. Older docs remain historical evidence only.
+
+Whenever a core production rule or core prompt changes, update `CORE_DESIGN_AND_PROMPTS.md`; do not allow it to be summarized away during handoff.
+
 ## High-level format
 - Real Korean community posts/comments are source material.
 - Usually 3 characters; 2 or 4 may appear.
@@ -147,3 +171,5 @@ Every future handoff must preserve:
 - source/dialogue examples
 - next exact action
 - GitHub persistence status
+
+The core design/prompt library itself must not be summarized away; preserve or update `CORE_DESIGN_AND_PROMPTS.md` whenever a core production rule changes.
