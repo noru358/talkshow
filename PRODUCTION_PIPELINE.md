@@ -1,3 +1,18 @@
+# CURRENT EXECUTION OVERRIDE — 2026-09-03
+
+Until CHAR_06 production lock is complete, the active workflow is **manual prompt entry in TopView only**.
+
+- Pause autonomous Work/TopView execution, automatic prompt rewriting, and automatic reference selection.
+- Use `CHAR06_MASTER_SHEET.png` as the primary visual authority.
+- Generate and QC one clean 16:9 scene still before I2V.
+- Do not animate the master-sheet grid directly.
+- After still approval, use it as the first frame for a short Seedance 2.0 Mini I2V test.
+- Do not advance to other characters, Pilot 001, or the reusable renderer while this override is active.
+
+This is a phase-local override. The long-term reusable asset/renderer pipeline below remains the later project direction.
+
+---
+
 # TALKSHOW PRODUCTION PIPELINE
 
 ## Goal
