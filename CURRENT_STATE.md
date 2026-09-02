@@ -3,107 +3,111 @@
 Updated: 2026-09-03 KST
 
 ## Absolute current phase
-**PHASE 1 — production pipeline lock / set reproducibility lock**
+**PHASE 1 — production pipeline lock / 3-person reproducibility lock**
 
-Broad concept planning is mostly complete. Character identity has been tested enough. The current bottleneck is now **set simplicity, set continuity, and correct physical grounding of 2–4 characters (3 default)**.
+Broad concept planning is complete enough. Do not restart or return to design-for-design's-sake.
+
+The current bottleneck is now:
+> **reliable reproduction of the same 3-character talkshow composition across short video generations: correct identity, fixed seat positions, physical grounding, and subtle conversational acting.**
 
 Current operating mode: **MANUAL TOPVIEW PROMPT WORKFLOW ONLY**.
 
-Do not restart the project from scratch. Do not return to CHAR_06-only testing unless a real failure specifically requires it. Do not reopen Work-mode automation unless the user explicitly asks.
-
 ## High-level format
-- Real Korean community posts/comments are the source material.
-- Usually 3 characters per episode; 2 or 4 may appear.
-- Character functions are fluid by beat; no permanently fixed boke/tsukkomi role.
-- AI should lightly transform/recombine human-written reactions rather than invent bland generic dialogue.
-- Final feel: friends clustered in an ordinary Korean room / livestream, not a polished TV/podcast studio.
-- Expected duration: Shorts/short-mid ~30–60 sec; possible later long-form ~3 min.
-- Long outputs are assembled from short fixed shots, not generated as one continuous clip.
+- Real Korean community posts/comments are source material.
+- Usually 3 characters; 2 or 4 may appear.
+- Character functions are fluid beat-by-beat, not permanently fixed boke/tsukkomi roles.
+- Final feel: casual people talking in an ordinary room/livestream, not a polished TV/podcast studio.
+- Expected output: ~30–60 sec shorts/short-mid; later possible ~3 min.
+- Final episodes are assembled from short clips, never one continuous 30–180 sec AI generation.
 
 ## Generation settings
-- Default video model: **Seedance 2.0 Mini**.
-- Validation used: 480p, 16:9, ~5–6 sec clips.
-- 5 sec can make Korean dialogue too fast; use 6–8 sec when needed rather than over-compressing dialogue.
+- Default: **Seedance 2.0 Mini**
+- 480p, 16:9
+- short clips ~5–6 sec; use 6–8 sec when Korean dialogue needs it
 
-## Character status
-- **CHAR_06**: passable single-character result. Identity/mouth/facial acting acceptable; style slightly cleaner/more colored than master but usable.
-- **CHAR_B (white T-shirt / light-blue jeans woman)**: passable character result. Main issue was set changed versus CHAR_06 run.
-- **Gray-hoodie male**: character itself reproduced reasonably; latest failure was physical placement in the richer room, not identity.
-- Other provided sheets: long-haired woman in black top/dark long skirt; black-jacket male with beige pants.
-
-Do not run isolated character tests merely for completeness.
+## Character lock status
+- **CHAR_06**: long wavy dark hair with bangs, beige top, **NO GLASSES**. Single-character viability passable.
+- **CHAR_B / white T-shirt woman**: light-brown bob, white fitted short-sleeve T-shirt, light-blue jeans, **NO GLASSES**. Identity broadly passable.
+- **Gray-hoodie male**: messy short black hair, gray hoodie, dark pants, **NO GLASSES**. Identity broadly passable.
+- Do not run isolated character tests just for completeness.
 
 ## Key QC history
-- `260902_0019_video_edit_1279.mp4`: CHAR_06 usable. Dialogue too fast at 5 sec; tablet/logo and set interpretation imperfect; character itself acceptable.
-- `260902_0025_video_edit_4946.mp4`: CHAR_B acceptable; set/furniture/chair/table changed from 1279, proving set consistency must be locked separately.
-- `260902_0027_video_edit_6351.mp4`: gray-hoodie character acceptable, but person appeared pasted / sitting on top of background. Rich room had too many fixed objects/seats and bad depth relationships.
+- `260902_0019_video_edit_1279.mp4`: CHAR_06 viable; dialogue fast at 5 sec; style slightly cleaner than master; character itself acceptable.
+- `260902_0025_video_edit_4946.mp4`: CHAR_B acceptable; room/furniture changed, proving set consistency is a separate issue.
+- `260902_0027_video_edit_6351.mp4`: richer room failed physical grounding; character looked pasted on background. Decision: simplify set rather than add more prompt prose.
+- `260902_0028_video_edit_3438.mp4`: **latest authoritative 3-person test.** Ultra-simple room improved grounding and reproducibility substantially. Remaining failures: glasses-like drift on the center/white-T-shirt character, intended left/center assignment was not respected, and acting was too static / socially disconnected. Background is somewhat plain but this is low priority.
 
-## Current set direction — `TALKSHOW_SET_01_SIMPLE`
-Use an **ultra-simple EMPTY ROOM anchor**, not the richer decorated Korean-room reference.
+## Latest 3-person test — intended vs actual
+Intended:
+- Left = white T-shirt woman
+- Center = CHAR_06
+- Right = gray-hoodie male
 
-Target:
-- straight-on frontal 2D view
-- 16:9
+Actual visual read:
+- Left = CHAR_06
+- Center = white T-shirt woman with glasses-like drift
+- Right = gray-hoodie male
+
+Therefore seat-position lock and identity lock are not yet production-safe.
+
+## Set direction — keep it simple
+Current background direction is basically accepted:
 - plain warm beige wall
-- one simple centered rectangular window
-- very simple Seoul night skyline
-- one low rectangular wooden table centered in foreground
 - simple wooden floor
-- little or no fixed seating in the anchor image
-- optional one small floor lamp only
+- one low rectangular wooden table
+- little/no fixed seating
+- no microphones
+- no decorative clutter
 
-Explicitly avoid microphones, neon sign, pegboard, cabinet, plants, shelves, rugs, decorative clutter, professional studio look, café/office/designer-interior look.
+A centered simple window OR one small floor lamp may be added later if the room feels too empty, but only after reproducibility is locked. Do not reopen broad interior design now.
 
-Reason: simplify geometry so characters can be physically grounded reliably. Do not solve the latest placement failure by adding more prompt prose; simplify the actual anchor.
+## Critical reproducibility strategy — UPDATED
+Do **not** regenerate the whole room + three-character composition from textual instructions for every clip if avoidable.
 
-## Camera / shot lock
-Avoid AI-generated zoom/pan/tilt/camera motion for now. Use separate fixed shots and edit together.
+Preferred production grammar:
+1. Create/approve **one canonical 3-person MASTER FIRST-FRAME/STILL** with correct identities, positions, room, table, and style.
+2. Reuse that same master still as the I2V first frame for repeated dialogue clips.
+3. Video prompts should then mostly contain **dialogue + acting**, not repeated long character/set descriptions.
+4. For tighter shots, first try **editorial crop/scale from the master**. Do not generate three separate single shots by default.
+5. Only generate and lock a separate SINGLE/REACTION anchor when a real episode needs a close reaction that crop/scale cannot deliver acceptably.
 
-- MASTER SHOT: `Create one straight-on 16:9 master shot with all three characters visible at the same time.`
-- SINGLE SHOT: `Create one straight-on 16:9 single-character talk-show shot.`
-- REACTION SHOT: optional fixed single-character reaction.
+Reason: this maximizes visual reproducibility and minimizes both prompt length and generation cost.
 
-Shot instructions should remain one line; do not waste prompt budget on long camera blocks.
+## Shot policy — UPDATED
+Do not create a large shot system in advance.
 
-## Prompt-budget strategy
-TopView prompt limit: 10,000 characters.
+Default:
+- **MASTER**: fixed frontal 3-person shot, reused heavily.
+- **EDIT CROP**: punch in on a character in post when sufficient.
+- **SINGLE / REACTION**: optional, generated only when a specific comedic beat actually needs it.
 
-Use modular compression:
-1. short shared style block
-2. short character block(s)
-3. short set block
-4. one-line shot instruction
-5. dialogue/action block (main variable budget)
+Therefore the earlier idea of generating CHAR_06 + CHAR_B + gray-hoodie single shots immediately after master lock is **too much by default** and is superseded.
 
-Reference images should carry most visual information. Compression means removing duplicated constraints, not deleting behaviorally important constraints.
+Shot instructions remain short prompt lines, e.g.:
+`Fixed frontal 3-person master shot. Keep the same composition.`
 
-## Current compact style block
-```text
-Use the provided character reference as the strict character and drawing-style authority.
+## Current dialogue test
+Korean dialogue:
+1. `373년 묵은 암호를 AI가 풀었대.`
+2. `근데 첫댓이 '좆도 쓸모 없는 거구만' ㅋㅋ`
+3. `ㅋㅋㅋ 틀린 말은 아니야`
 
-Match the same low-fi 2D webcomic style: thick slightly imperfect black outlines, flat muted colors, minimal shading, simple cheap-cute proportions.
-
-Do not beautify, polish, modernize or redesign the character. Avoid polished anime/webtoon rendering, realism, glossy/cinematic lighting, and added visual detail.
-```
-
-## Current compact set block
-```text
-Use the provided set reference as the strict room/layout authority.
-
-Preserve the same simple straight-on Korean room: plain warm beige wall, centered window with a simple Seoul night skyline, low rectangular wooden table, and simple wooden floor.
-
-Keep the set sparse and physically readable. Do not add or redesign major furniture, decorations, microphones, shelves, plants, rugs, pegboards, neon signs, or extra props.
-```
+Current acting correction:
+- Center speaker delivers line 1 calmly.
+- Left speaker delivers line 2 with amused disbelief.
+- Right speaker delivers line 3 dryly / half-amused.
+- Non-speaking characters should subtly listen: tiny eye/head turns, small smiles/laugh reactions.
+- Keep motion subtle but not frozen; no exaggerated gestures.
 
 ## Next exact action
-1. Finalize one **ultra-simple empty-room `TALKSHOW_SET_01_SIMPLE` anchor**.
-2. Use 3 existing character sheets + that anchor for **one 3-character master shot**.
-3. QC only: physical grounding, table/room geometry, individual character identity, usable 3-person composition.
-4. If pass, do not add more set experiments. Create single shots in the same room.
-5. Then move immediately to a real community-sourced 3-person episode.
+1. Correct the **3-person master composition** only: no glasses, strict left/center/right assignment, subtle interaction.
+2. Once visually correct, treat that frame/still as the **canonical reusable master first-frame anchor**.
+3. Animate the same anchor with the current 3-line dialogue.
+4. If that clip passes, move directly into a real community-sourced episode using the same anchor.
+5. Do **not** pre-generate three single-shot families. Use edit crops first; generate a single/reaction anchor only when an actual episode beat proves it necessary.
 
 ## Manual production loop
-1. ChatGPT writes the exact final prompt.
+1. ChatGPT writes exact prompt.
 2. User manually pastes prompt + references into TopView.
 3. User generates once.
 4. User uploads result.
@@ -114,14 +118,22 @@ Keep the set sparse and physically readable. Do not add or redesign major furnit
 Canonical repository: **`noru358/talkshow`**
 Default branch: `main`.
 
+## Response continuity rule
+Every talkshow response begins with:
+1. **큰 흐름**
+2. **현재 세부 단계**
+3. **이번 턴 완료조건**
+
+Do not end obvious next steps with permission-seeking such as “원하면 ~해주겠다.” Continue the task directly when the next action is clear.
+
 ## Handoff continuity rule
-Every future handoff must preserve, not merely summarize:
+Every future handoff must preserve:
 - current phase
 - meaningful decisions
-- exact reusable prompt blocks / important successful prompt examples
+- exact reusable prompt blocks / successful prompt examples
 - character status
 - set spec
-- relevant QC failures and why
-- community-source/dialogue example(s)
+- QC failures and why
+- source/dialogue examples
 - next exact action
 - GitHub persistence status
