@@ -39,9 +39,11 @@ Current operating mode: **MANUAL TOPVIEW PROMPT WORKFLOW ONLY**.
 - `260902_0019_video_edit_1279.mp4`: CHAR_06 viable; dialogue fast at 5 sec; style slightly cleaner than master; character itself acceptable.
 - `260902_0025_video_edit_4946.mp4`: CHAR_B acceptable; room/furniture changed, proving set consistency is a separate issue.
 - `260902_0027_video_edit_6351.mp4`: richer room failed physical grounding; character looked pasted on background. Decision: simplify set rather than add more prompt prose.
-- `260902_0028_video_edit_3438.mp4`: **latest authoritative 3-person test.** Ultra-simple room improved grounding and reproducibility substantially. Remaining failures: glasses-like drift on the center/white-T-shirt character, intended left/center assignment was not respected, and acting was too static / socially disconnected. Background is somewhat plain but this is low priority.
+- `260902_0028_video_edit_3438.mp4`: historical pre-lock test. Ultra-simple room improved grounding, but identity/seat assignment and acting were not yet locked.
+- `260902_0033_video_edit_2781.mp4`: production stability baseline. Small residual issue: slightly unnatural mouth motion.
+- `260902_0034_video_edit_2921.mp4`: livelier acting baseline. Small residual issue: slight eye deformation during smiling/blinking.
 
-## Latest 3-person test — intended vs actual
+## Historical pre-lock 3-person failure — intended vs actual
 Intended:
 - Left = white T-shirt woman
 - Center = CHAR_06
@@ -52,7 +54,7 @@ Actual visual read:
 - Center = white T-shirt woman with glasses-like drift
 - Right = gray-hoodie male
 
-Therefore seat-position lock and identity lock are not yet production-safe.
+This failure was resolved by the later 0033/0034 production lock. Do not use it as a reason to return to testing.
 
 ## Set direction — keep it simple
 Current background direction is basically accepted:
