@@ -1,7 +1,9 @@
 # PILOT 001 — EPISODE SPEC
 
-Status: SOURCE/GOLD prepared → script draft next
-Target: 9:16 / 20–35 sec / 3 characters
+Status: **manual TopView production package ready**
+Target: 16:9 / approximately 38.5 sec / 3 characters
+
+Current execution authority: `PRODUCTION_PACKAGE.md`. This file retains earlier development history.
 
 ## 1. Source
 

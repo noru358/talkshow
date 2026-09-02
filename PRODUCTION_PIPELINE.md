@@ -1,15 +1,14 @@
 # CURRENT EXECUTION OVERRIDE — 2026-09-03
 
-Until CHAR_06 production lock is complete, the active workflow is **manual prompt entry in TopView only**.
+Production pipeline lock is complete. The active workflow is **real-episode manual prompt entry in TopView by the user**.
 
 - Pause autonomous Work/TopView execution, automatic prompt rewriting, and automatic reference selection.
-- Use `CHAR06_MASTER_SHEET.png` as the primary visual authority.
-- Generate and QC one clean 16:9 scene still before I2V.
-- Do not animate the master-sheet grid directly.
-- After still approval, use it as the first frame for a short Seedance 2.0 Mini I2V test.
-- Do not advance to other characters, Pilot 001, or the reusable renderer while this override is active.
+- Reuse the already locked canonical 3-person master still as the first frame.
+- Do not create a new set, character test, or master-composition test.
+- Use `episodes/P001/PRODUCTION_PACKAGE.md` for the exact six prompts and user action order.
+- ChatGPT does not generate the videos; the user generates and edits them manually.
 
-This is a phase-local override. The long-term reusable asset/renderer pipeline below remains the later project direction.
+The long-term reusable asset/renderer pipeline below remains the later project direction.
 
 ---
 

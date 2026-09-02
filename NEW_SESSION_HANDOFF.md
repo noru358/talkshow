@@ -2,6 +2,8 @@
 
 **Last updated:** 2026-09-03 KST
 
+> **CURRENT OVERRIDE:** Production pipeline lock is complete. The active phase is `PHASE 2 — real episode production / P001 manual generation ready`. The user will generate/edit manually; ChatGPT supplies prompts and the user's action list only. Use `CURRENT_STATE.md` and `episodes/P001/PRODUCTION_PACKAGE.md` before following any older Phase-1 instructions below.
+
 This is the authoritative continuation file. A fresh session must be able to continue the project from this document without re-planning or losing the prompt history, failed-test lessons, current character status, set design decisions, or next actions.
 
 ---

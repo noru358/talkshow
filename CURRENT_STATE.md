@@ -3,12 +3,16 @@
 Updated: 2026-09-03 KST
 
 ## Absolute current phase
-**PHASE 1 — production pipeline lock / 3-person reproducibility lock**
+**PHASE 2 — real episode production / P001 manual generation ready**
+
+The user has confirmed that the production pipeline lock is complete. The user will perform video generation and editing manually. ChatGPT's current responsibility is limited to supplying the exact prompts, source-grounded dialogue, generation order, QC criteria, and user action checklist.
+
+Do not return to set tests, isolated character tests, or 3-person reproducibility tests.
 
 Broad concept planning is complete enough. Do not restart or return to design-for-design's-sake.
 
 The current bottleneck is now:
-> **reliable reproduction of the same 3-character talkshow composition across short video generations: correct identity, fixed seat positions, physical grounding, and subtle conversational acting.**
+> **manual generation of P001's six real episode clips from the already locked master first frame.**
 
 Current operating mode: **MANUAL TOPVIEW PROMPT WORKFLOW ONLY**.
 
@@ -100,11 +104,15 @@ Current acting correction:
 - Keep motion subtle but not frozen; no exaggerated gestures.
 
 ## Next exact action
-1. Correct the **3-person master composition** only: no glasses, strict left/center/right assignment, subtle interaction.
-2. Once visually correct, treat that frame/still as the **canonical reusable master first-frame anchor**.
-3. Animate the same anchor with the current 3-line dialogue.
-4. If that clip passes, move directly into a real community-sourced episode using the same anchor.
-5. Do **not** pre-generate three single-shot families. Use edit crops first; generate a single/reaction anchor only when an actual episode beat proves it necessary.
+1. Open `episodes/P001/PRODUCTION_PACKAGE.md`.
+2. In TopView, reuse the exact locked canonical 3-person master still.
+3. The user generates `S01 → S06` once each with the exact prompts.
+4. The user uploads each result for production QC.
+5. Do not pre-generate singles or return to any test stage.
+
+Active real source: https://m.dcinside.com/board/thesingularity/1382660
+
+Target final duration: approximately 38.5 seconds.
 
 ## Manual production loop
 1. ChatGPT writes exact prompt.
