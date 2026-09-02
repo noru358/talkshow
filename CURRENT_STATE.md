@@ -3,15 +3,15 @@
 Updated: 2026-09-02 KST
 
 ## Current phase
-**2/7 저장소/MD 체계 + Pilot 001 원소스 준비**
+**4/7 Character Asset Package — in progress**
 
 Progress:
-1. 제작 원칙 확정 — mostly done
-2. 저장소/MD 체계 — in progress
-3. 원소스 수집 — Pilot 001 source selected
-4. 대본 — next
-5. 비주얼 바이블 — next
-6. 제작 파이프라인/툴 — initial decision made
+1. 제작 원칙 확정 — done
+2. 저장소/MD 체계 — done (repo rename still manual)
+3. 캐릭터/그림체 확정 — done
+4. 에셋 패키지 제작 — current
+5. 대본·콘티 결합 — next
+6. 음성·렌더 파이프라인 — next
 7. Pilot 001 완성 — pending
 
 ## Repository
@@ -31,8 +31,26 @@ Progress:
 - 해석 가능한 뜬금포는 적극 허용.
 - Creative QC 최소화.
 - 수집 단계에서는 욕설/혐오 표현을 사전 순화하지 않고 맥락 보존. 공개본에서 비프/컷/자막 마스킹 등으로 처리.
-- 초기 비주얼 방향: 저프레임 2D 컷아웃 + 커뮤니티 만화 감성.
+- 최종 그림체: 이전 비교안의 **A안**, 초단순/거친 손그림 커뮤니티 웹툰 스타일.
+- B/C/E/F/G/K/L/M/Q/R 10개 캐릭터 디자인을 cast pool로 확정.
+- 캐릭터 역할은 고정하지 않는다.
+- Pilot 001 임시 3인은 C/E/K로 시작. 이유는 실루엣·복장·에너지 대비가 크기 때문이며 영구 고정이 아님.
 - 장기 자동화 렌더러 후보: Remotion.
+
+## Character asset production
+`assets/CHARACTER_ASSET_SPEC.md` created.
+Pilot-first rule: 10명 전체 풀팩을 먼저 만들지 않는다. C/E/K 3명만 최소 에셋으로 P001을 완성하고, 영상에서 실제 부족한 에셋만 추가한다.
+
+Minimal Pilot pack per C/E/K:
+- seated neutral
+- seated explaining
+- seated deadpan
+- seated big laugh
+- seated shocked
+- seated annoyed
+- standing neutral
+- mouth closed/mid/wide
+- eyes open/half/closed
 
 ## Pilot 001 source
 DCInside dcbest URL:
@@ -45,16 +63,14 @@ DCInside dcbest URL:
 - 댓글 B: `사람들이 저기에 시간을 안들이게 되었으니 엄청 쓸모있음`
 - 주변 리액션: `병신 ㅋㅋ`, `천재노 ㅋㅋㅋ` 등
 
-주의: 현재 브라우징 경로에서는 DC 본문/댓글 직접 fetch가 차단되어 있어 위 댓글은 사용자 제공 원소스로 취급. 관련 사건 자체는 별도 기사에서 확인 가능.
-
 ## Next actions
-1. Pilot 001 SOURCE → GOLD extraction
-2. 실제 댓글을 거의 그대로 사용해 3인 script v0.1 제작
-3. 같은 대본에 공개본 censor event 설계
-4. 3인 캐릭터 최소 identity 초안
-5. visual style 3안 제작/비교
-6. 최종 스타일 선택 후 character asset pack 생성
-7. 음성 테스트 → 립싱크 → Remotion/대체툴로 20~35초 영상 렌더
+1. C/E/K Pilot 최소 character asset sheet 제작
+2. Pilot 고정 배경/좌석 layout 제작
+3. P001 대본을 C/E/K에 실제 캐스팅
+4. shot-by-shot storyboard + censor events 작성
+5. voice identity test
+6. low-frame mouth switching + Remotion prototype
+7. 20–35초 P001 렌더
 
 ## Session handoff rule
 사용자가 `다음 세션에서 이어가자`라고 하면:
