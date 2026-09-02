@@ -260,7 +260,7 @@ But none of this should happen before CHAR_06 is locked.
 
 # GitHub persistence protocol (MANDATORY at every session handoff)
 
-Canonical repository currently referenced in project history: `noru358/unlived-life` (private).
+Canonical repository: `noru358/-` (public). The repository may later be renamed to `noru358/talkshow`; check `talkshow` first and fall back to `-`.
 
 Every time the user asks to move to a new session or says to prepare a handoff, do ALL of the following before saying the handoff is complete:
 
@@ -285,8 +285,8 @@ git push origin HEAD
 
 If the repo is not already cloned on the machine:
 ```bash
-git clone https://github.com/noru358/unlived-life.git
-cd unlived-life
+git clone https://github.com/noru358/-.git talkshow
+cd talkshow
 ```
 
 If authentication is required, use the existing GitHub CLI/account setup rather than creating a duplicate repo.
