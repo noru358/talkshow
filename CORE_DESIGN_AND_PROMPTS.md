@@ -1,11 +1,11 @@
 # TALKSHOW — CORE DESIGN & PROMPT LIBRARY
 
-**Status:** AUTHORITATIVE / 0-priority continuity file
+**Status:** AUTHORITATIVE prompt and production-grammar library
 **Updated:** 2026-09-03 KST
 
 This file exists to prevent loss of the project's **core design decisions, production grammar, prompt blocks, character constraints, set logic, and validated QC lessons** across sessions.
 
-If another document conflicts with this one on the current production method, **this file + `CURRENT_STATE.md` take priority**. Older files remain useful as historical context only.
+Repository authority order is defined only in `README.md`. This file is authoritative for reusable visual, voice and prompt grammar; `CURRENT_STATE.md` and the active episode package control the current action.
 
 ---
 
@@ -585,7 +585,7 @@ These are logical roles, not proof that independent agents are already implement
 
 Automate upstream first: detection, source preservation, comment-tree extraction, GOLD candidate tagging, and package drafting. Keep premise selection, final GOLD choice, TopView generation, clip choice, and final edit manual during the pilot.
 
-Full rationale and gap analysis: `WORKFLOW_AND_CORE_AUDIT_20260903.md`.
+The current role map, source gate and performance loop are maintained in `PRODUCTION_PIPELINE.md`.
 
 ## 17.2 Validated input stack
 
@@ -630,7 +630,7 @@ Locked pilot method:
 5. Use fixed-ID TTS only for a segment that cannot be cleanly converted.
 6. Replace Scene A audio in the final edit; do not regenerate Scene A picture.
 
-Voice slots:
+Voice slots are maintained in `assets/VOICE_REGISTRY.md`.
 
 | Character | Fixed profile | voice_id |
 |---|---|---|
