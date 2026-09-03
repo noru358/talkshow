@@ -18,10 +18,10 @@
 ## 현재
 
 - P001 Scene A: 영상 잠금, 재생성 금지
-- 다음: Scene B 1회 수동 생성
+- 다음: `episodes/P001/SCENE_B_PACKAGE.md` 그대로 Scene B 10초 1회 수동 생성
 - 생성: Seedance 2.0 Mini, 잠긴 16:9 cast-master 재사용
 - 배포: 9:16 편집본
-- 음성: Seedance 원음은 연기 가이드이며 최종본은 캐릭터별 고정 voice ID로 voice-to-voice 변환
+- 음성: `assets/VOICE_REGISTRY.md`의 고정 voice ID로 voice-to-voice 변환; 실제 ID는 P001 게시 전 배정
 - 사용자: TopView 생성·CapCut/Resolve 편집·게시
 - ChatGPT: source/GOLD/package/prompt, defect QC, performance learning
 
