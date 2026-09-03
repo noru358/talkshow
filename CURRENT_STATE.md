@@ -12,7 +12,7 @@ Do not return to set tests, isolated character tests, or 3-person reproducibilit
 Broad concept planning is complete enough. Do not restart or return to design-for-design's-sake.
 
 The current bottleneck is now:
-> **manual generation of P001's six real episode clips from the already locked master first frame.**
+> **design and manual generation of P001 Scene B after Scene A production lock.**
 
 Current operating mode: **MANUAL TOPVIEW PROMPT WORKFLOW ONLY**.
 
@@ -45,13 +45,13 @@ Whenever a core production rule or core prompt changes, update `CORE_DESIGN_AND_
 - Usually 3 characters; 2 or 4 may appear.
 - Character functions are fluid beat-by-beat, not permanently fixed boke/tsukkomi roles.
 - Final feel: casual people talking in an ordinary room/livestream, not a polished TV/podcast studio.
-- Expected output: ~30–60 sec shorts/short-mid; later possible ~3 min.
+- Current short-form duration is source-driven: usually 15–22 sec for one strong comment chain, 22–35 sec only when genuine source beats support it; later possible ~3 min.
 - Final episodes are assembled from short clips, never one continuous 30–180 sec AI generation.
 
 ## Generation settings
 - Default: **Seedance 2.0 Mini**
 - 480p, 16:9
-- short clips ~5–6 sec; use 6–8 sec when Korean dialogue needs it
+- short clips usually 7–12 sec; simple comment-chain episodes normally use 2 dense scenes
 
 ## Character lock status
 - **CHAR_06**: long wavy dark hair with bangs, beige top, **NO GLASSES**. Single-character viability passable.
@@ -66,6 +66,7 @@ Whenever a core production rule or core prompt changes, update `CORE_DESIGN_AND_
 - `260902_0028_video_edit_3438.mp4`: historical pre-lock test. Ultra-simple room improved grounding, but identity/seat assignment and acting were not yet locked.
 - `260902_0033_video_edit_2781.mp4`: production stability baseline. Small residual issue: slightly unnatural mouth motion.
 - `260902_0034_video_edit_2921.mp4`: livelier acting baseline. Small residual issue: slight eye deformation during smiling/blinking.
+- `260903_0001_video_edit_2387.mp4`: **P001 Scene A production pass and lock.** 7.104 sec; stable identity/set/speakers and materially improved social interaction. Residual issue: RIGHT anticipates the laugh before LEFT's trigger phrase.
 
 ## Historical pre-lock 3-person failure — intended vs actual
 Intended:
@@ -116,7 +117,7 @@ Therefore the earlier idea of generating CHAR_06 + CHAR_B + gray-hoodie single s
 Shot instructions remain short prompt lines, e.g.:
 `Fixed frontal 3-person master shot. Keep the same composition.`
 
-## Current dialogue test
+## Historical lock dialogue test
 Korean dialogue:
 1. `373년 묵은 암호를 AI가 풀었대.`
 2. `근데 첫댓이 '좆도 쓸모 없는 거구만' ㅋㅋ`
@@ -129,16 +130,26 @@ Current acting correction:
 - Non-speaking characters should subtly listen: tiny eye/head turns, small smiles/laugh reactions.
 - Keep motion subtle but not frozen; no exaggerated gestures.
 
+## Current operating audit
+
+Authoritative review: `WORKFLOW_AND_CORE_AUDIT_20260903.md`
+
+Exact logical chain:
+`Radar/Source Ingest → Thread Reconstruction/Gold Extraction → Episode Package/Storyboard → User Manual Production → Defect QC/Archive`
+
+Current reality: the upstream agent roles are not independently deployed; ChatGPT currently combines them. The user manually generates, selects, edits, and publishes.
+
 ## Next exact action
-1. Open `episodes/P001/PRODUCTION_PACKAGE.md`.
-2. In TopView, reuse the exact locked canonical 3-person master still.
-3. The user generates `S01 → S06` once each with the exact prompts.
-4. The user uploads each result for production QC.
-5. Do not pre-generate singles or return to any test stage.
+1. Keep `260903_0001_video_edit_2387.mp4` as P001 Scene A; do not regenerate.
+2. Read `episodes/P001/SCENE_A_LOCK.md` for the exact used prompt and QC.
+3. Design one Scene B, approximately 8–12 sec, containing the human-comment reversal and social punch.
+4. Add the causal reaction control: no smile/reaction before the trigger phrase.
+5. User manually generates Scene B once in TopView and uploads it for defect QC.
+6. Do not return to set tests or the old six-shot plan.
 
 Active real source: https://m.dcinside.com/board/thesingularity/1382660
 
-Target final duration: approximately 38.5 seconds.
+Target final duration: approximately 15–22 seconds across 2 scenes.
 
 ## Manual production loop
 1. ChatGPT writes exact prompt.
