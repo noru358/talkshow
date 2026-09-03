@@ -617,3 +617,41 @@ The order should read as trigger → first listener reaction → second listener
 ## 17.5 Visual variety without reopening the shot system
 
 Default remains the fixed 3-person master plus post-production crops. Allow at most one episode-specific explanatory card or cutaway when the premise cannot be understood quickly without it. Do not create decorative B-roll or new backgrounds for every beat.
+
+# 18. VOICE IDENTITY LOCK — 2026-09-03
+
+Seedance native speech is a performance/lip-sync guide, not the final recurring identity.
+
+Locked pilot method:
+1. Keep spoken dialogue in I2V prompts.
+2. Split the generated audio by speaker.
+3. Convert each segment with ElevenLabs Voice Changer multilingual model to a fixed character voice ID.
+4. Preserve original timing, delivery and emotion.
+5. Use fixed-ID TTS only for a segment that cannot be cleanly converted.
+6. Replace Scene A audio in the final edit; do not regenerate Scene A picture.
+
+Voice slots:
+
+| Character | Fixed profile | voice_id |
+|---|---|---|
+| CHAR_06 / center woman | Korean young adult woman; calm, matter-of-fact, medium-low pitch, moderate tempo, low theatricality | UNASSIGNED — required before P001 publish |
+| White T-shirt woman / CHAR_B | Korean young adult woman; brighter and slightly faster; skeptical edge; crisp consonants; not cute/anime | UNASSIGNED — required before P001 publish |
+| Gray-hoodie male | Korean young adult man; dry low-mid register; restrained laugh; slightly lazy cadence; not announcer-like | UNASSIGNED — required before P001 publish |
+
+Once assigned, voice IDs do not change by episode. Voice-ID assignment blocks publishing, not Scene B picture generation.
+
+# 19. ASPECT-RATIO LOCK — 2026-09-03
+
+- Generation master remains 16:9 because the validated 3-person cast-master and physical grounding depend on it.
+- Distribution master is 9:16.
+- Do not merely shrink the 16:9 frame with permanent black letterbox bars.
+- Build a vertical edit using speaker crop/punch-in, a top hook zone and a bottom subtitle-safe zone.
+- Do not regenerate the set or cast master for P001.
+
+# 20. PROVENANCE / PERFORMANCE CONTROLS — 2026-09-03
+
+- AI-written spoken beats must be ≤30%; source-summary setup counts.
+- AI-original comedic payoff defaults to 0%.
+- Remove a bridge before rewriting human GOLD.
+- Reject a source before storyboard when it needs >30% AI connective dialogue or has fewer than two strong human beats.
+- Post-publication performance feeds source/GOLD/hook hypotheses, never automatic smoothing of dialogue.
