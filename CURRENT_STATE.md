@@ -1,7 +1,7 @@
 # CURRENT STATE
 
-Updated: 2026-09-03 KST  
-Status: **SERIES V2 RELOCK ACTIVE — RIGHT_MASTER_V2 + FOUR SET MASTERS are the immediate work**
+Updated: 2026-09-04 KST
+Status: **SERIES V2 VISUALS LOCKED — FREE 3-VOICE REFERENCE PACK READY / FIRST OMNI PILOT AWAITING USER APPROVAL**
 
 ## 지금의 단일 결론
 
@@ -112,31 +112,60 @@ V1보다 명확히 크게 간다.
 - first distribution: YouTube Shorts; Reels/TikTok cross-post candidates
 - Distribution & Performance는 다음 소재/실험가설에 피드백하되 자동 대사 최적화로 수렴시키지 않음
 
+## 2026-09-04 visual completion
+
+`assets/V2_VISUAL_LOCK_20260904.md` is now the canonical visual lock record.
+
+- `RIGHT_MASTER_V2` master pack locked
+- four set-specific 16:9 cast stills locked
+- canonical binaries preserved under `assets/v2_locked/`
+- HOME / CONVENIENCE / HANGANG / ROOFTOP usage conditions recorded
+- do not return to empty-set or cast-still regeneration without a newly identified hard defect
+
 ## 바로 다음 행동
 
-### Step 1 — RIGHT_MASTER_V2
-- `assets/RIGHT_MASTER_V2_SPEC.md`의 exact prompt를 사용
-- 기존 recurring male master image/package를 reference로 반드시 첨부
-- 얼굴/identity를 바꾸지 않고 hair/outfit만 update
-- 생성 후 identity/style/outfit QC → lock
+### Step 1 — USER REVIEW OF FREE VOICE PREVIEWS — DONE
+- LEFT / CHAR_B: Gaeun outdoors
+- CENTER / CHAR_06: Harin
+- RIGHT / RIGHT_MASTER_V2: Taemin
+- this review consumed 0 credits
 
-### Step 2 — FOUR EMPTY SET MASTERS
-- `assets/SET_MASTER_V2_PACK.md`의 A/B/C/D exact prompts 사용
-- 우선 empty set만 각각 생성
-- 캐릭터를 동시에 합성하지 않음
-- 네 empty set을 QC/lock한 다음 각 set + 3 character packs로 3-person cast still 생성
+### Step 2 — FREE REFERENCE PACK — DONE
+- LEFT / CHAR_B: Gaeun outdoors catalog preview
+- CENTER / CHAR_06: Harin catalog preview
+- RIGHT / RIGHT_MASTER_V2: Taemin catalog preview
+- packaged as `TALKSHOW_V2_SELECTED_VOICE_REFERENCE_PACK.zip`
+- no new TTS generation; 0 credits consumed
 
-### Step 3 이후
-- four set-specific cast still lock
-- fixed voice ID auditions/lock
-- V2 reaction grammar로 실제 P001 또는 다음 production clip 생성
+### Step 3 — FIRST OMNI REFERENCE PILOT — READY / NOT SUBMITTED
+- authority: `episodes/P001/V2_OMNI_REFERENCE_PILOT_PACKAGE.md`
+- use the V2 HOME cast still plus the three free catalog audio previews
+- generate P001 Scene B once only after explicit user approval
+- first QC determines whether free audio references are sufficient voice anchors
+- do not buy exact-line TTS before this test proves it is necessary
+
+### Step 4 이후
+- lock the reference-audio route if speaker assignment and timbre are stable
+- use exact-line TTS/audio replacement only as a fallback for material drift
 - 9:16 edit → publish → 24h/7d learning
 
 ## 현재 실제 blocker
 
-`RIGHT_MASTER_V2`를 ChatGPT image edit로 직접 생성하려면 이 세션에 기존 recurring male master image가 실제 이미지 입력으로 있어야 한다. GitHub에는 이미지 asset이 보존되어 있지만, repository binary reference만으로 이 세션의 image edit target을 자동 대체하지 않는다.
+The visual and free-voice-pack blockers are cleared. The only active blocker is explicit user approval immediately before one credit-consuming Omni Reference video generation. Voice names in prose are not treated as a lock; the three actual audio files must be attached and mapped to LEFT/CENTER/RIGHT.
 
-따라서 프롬프트/설계는 완료 상태이고, 실제 동일 identity 이미지 편집은 해당 male master 이미지가 이 세션에 제공되는 즉시 실행한다.
+## Mandatory pre-generation inheritance check
+
+Before presenting or submitting any scene prompt, compare the executable prompt against every active series-level lock. Do not assume that a rule stored in a core document will influence generation unless it is written directly into the scene prompt.
+
+Required checks:
+- visual identity / set / position lock is present in the executable prompt
+- selected voice-reference files and speaker mapping are present
+- `REACTION_RULES_V2` is translated into scene-specific visible actions, not generic wording
+- reactions remain causally staggered, but are visibly larger than V1 at the actual framing scale
+- the prompt does not reintroduce superseded V1 phrases such as `subtle acting`, `small reactions`, or blanket `no large gestures`
+- generation count, model, resolution, duration and credit gate match the current approved task
+
+If any check fails, revise the execution package before requesting approval or spending credits.
 
 ## 응답 규칙
 
