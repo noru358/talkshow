@@ -12,9 +12,10 @@
 3. `PRODUCTION_PIPELINE.md` — 역할·게이트·성과 루프
 4. `SERIES_V2_RELOCK.md` — 현재 V2에서 의도적으로 재오픈/재정의한 visual/voice/reaction/first-frame baseline
 5. `CORE_DESIGN_AND_PROMPTS.md` — reusable historical/current grammar; V2와 충돌하는 sparse-set / restrained-performance / universal-first-pose 부분은 `SERIES_V2_RELOCK.md`가 supersede
-6. `episodes/Pxxx/` — 회차별 source, prompt, QC, performance. active episode package는 그 회차의 실행 세부를 통제한다.
+6. `MASTER_STYLE_PROMPT.md` — 캐릭터/배경 생성·리마스터 시 쓰는 authoritative copy-paste visual style lock. 개별 캐릭터 identity reference가 generic style 문구보다 우선한다.
+7. `episodes/Pxxx/` — 회차별 source, prompt, QC, performance. active episode package는 그 회차의 실행 세부를 통제한다.
 
-충돌하면 `CURRENT_STATE.md`가 현재 행동을 우선 통제한다. V2 변경은 `SERIES_V2_RELOCK.md`를 따른다. 과거 결정은 Git history와 P001 V1 파일로 보존한다.
+충돌하면 `CURRENT_STATE.md`가 현재 행동을 우선 통제한다. V2 변경은 `SERIES_V2_RELOCK.md`를 따른다. 캐릭터 얼굴·눈·머리 등 identity는 해당 reference image가 `MASTER_STYLE_PROMPT.md`의 일반 스타일 문구보다 우선한다. 과거 결정은 Git history와 P001 V1 파일로 보존한다.
 
 ## 현재
 
@@ -39,4 +40,5 @@ A 2026-09-04 inspection found that older prose claimed `assets/V2_VISUAL_LOCK_20
 
 세부 상태: [CURRENT_STATE.md](CURRENT_STATE.md)  
 V2 변경 이유/락: [SERIES_V2_RELOCK.md](SERIES_V2_RELOCK.md)  
+복붙용 마스터 스타일: [MASTER_STYLE_PROMPT.md](MASTER_STYLE_PROMPT.md)  
 P002 full episode: [episodes/P002/FULL_EPISODE_PACKAGE.md](episodes/P002/FULL_EPISODE_PACKAGE.md)
