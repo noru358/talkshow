@@ -10,6 +10,22 @@ Production pipeline lock is complete. The active workflow is **real-episode manu
 
 The long-term reusable asset/renderer pipeline below remains the later project direction.
 
+## Current logical role map
+
+The intended operating chain is:
+
+`Radar/Source Ingest → Thread Reconstruction/Gold Extraction → Episode Package/Storyboard → User Manual TopView/CapCut Production → Defect QC/Archive`
+
+This is not yet a set of independently deployed agents. In the current pilot, ChatGPT performs the upstream source/editorial/package roles, the user performs generation/edit/publish, and ChatGPT performs defect-only QC.
+
+Important boundaries:
+- do not send a detected post directly to storyboard without reconstructing comments/replies and selecting GOLD
+- QC may reject production defects or a weak source, but must not smooth human language into bland dialogue
+- automatic prompt rewriting, automatic reference selection, and automatic TopView execution remain paused
+- detailed audit: `WORKFLOW_AND_CORE_AUDIT_20260903.md`
+- simple comment-chain default: 2 scenes / approximately 15–22 sec, not a forced 30–60 sec
+
+
 ---
 
 # TALKSHOW PRODUCTION PIPELINE
