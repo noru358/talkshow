@@ -1,191 +1,268 @@
 # TALKSHOW — SERIES V2 RELOCK
 
 Updated: 2026-09-04 KST  
-Status: **ACTIVE — visuals/voices/reaction baseline established; production focus shifted to first complete episode**
+Status: **ACTIVE — visual baseline established; performance/audio baseline relocked from real P002 evidence**
 
-This file records the deliberate reopening of the series baseline after the first P001 visual lock. It exists so later sessions do not accidentally revert to the earlier sparse-room / restrained-performance assumptions.
+This file records the deliberate V2 reopening after P001 and the subsequent P002 production learnings. It exists so later sessions do not accidentally revert to sparse sets, restrained reactions, fixed-duration-first speech, phoneme-perfect facial animation, or pilot-for-pilot testing.
 
 ## Why V2 was reopened
 
-The earlier `SET_MASTER_01` was intentionally sparse because richer rooms had caused character/furniture grounding failures. That solved reproducibility, but the accepted result exposed a higher-level product problem:
+The earlier sparse-room architecture improved reproducibility but created a weak product:
+- room looked under-produced
+- recurring cast chemistry felt too restrained
+- old male styling was under-designed
+- random/native generated voices were not acceptable as recurring identity
+- micro-reaction controls produced an education-channel energy instead of a lively friend-chat show
 
-- the empty beige room + one low table + floor-seated three-person composition looked too cheap and under-produced
-- it did not feel like a strong recurring casual-chat series environment
-- the gray-hoodie male looked visually under-designed compared with the rest of the cast
-- native/random Seedance voices were not acceptable as recurring character identity
-- acting/reaction controls were too restrained; the resulting energy was closer to a calm information/education channel than a comedy/chat channel
+V2 therefore keeps strict visual authority while deliberately increasing social/physical performance amplitude.
 
-Therefore V2 intentionally accepts a little more visual complexity while preserving reproducibility through stricter reference hierarchy and locked first-frame stills.
+## Relationship to earlier P001 work
 
-## Relationship to P001 V1
+P001 V1 files remain historical evidence. Do not delete them.
 
-Keep all P001 V1 files and locks as historical evidence. Do not delete them.
-
-The following prior next-actions are now superseded:
-- do not treat `episodes/P001/SCENE_B_PACKAGE.md` as the immediate next action
-- Scene B QC is skipped by explicit user decision
-- `episodes/P001/V2_OMNI_REFERENCE_PILOT_PACKAGE.md` remains useful evidence but is no longer the active production target
-- Scene A may be regenerated later; the previous `do not regenerate` rule is no longer a series-level constraint
-- `SET_MASTER_01` remains a validated reproducibility baseline, not the preferred final series set
-
-The current goal is to produce a real complete episode rather than another isolated pilot-for-pilot test.
+Superseded series-level assumptions:
+- no need to keep testing isolated P001 Scene B before a real episode
+- `SET_MASTER_01` is evidence, not the preferred final set
+- `subtle acting`, `small reactions`, or blanket `no large gestures` are no longer V2 defaults
+- `2 x 8 sec` is not a mandatory episode structure
 
 ## Series V2 locked decisions
 
 ### 1. Recurring cast
-Keep the current three-person recurring core:
+Core:
 - `CHAR_B` / white-T-shirt woman
 - `CHAR_06`
 - current recurring male identity / `RIGHT_MASTER_V2`
 
-Character face identity and base drawing language remain the authority. Episode-specific locked images may contain later clothing refinements; when prose and the active visual reference conflict, the active image controls that episode unless a newer explicit text lock says otherwise.
+Active reference image overrides stale prose for visible face, hairstyle, outfit, proportions and set details.
 
-### 2. RIGHT male redesign
-The old gray hoodie and messy-hair styling are retired as the preferred recurring styling.
+### 2. Male styling
+Old gray hoodie / messy-hair styling is retired as preferred recurring styling.
 
-The reusable target remains:
-- ordinary but put-together Seoul man in his 20s/early 30s
-- contemporary Korean daily/minimal casual rather than streetwear costume or idol styling
-- no bag / no bag strap
+Target:
+- ordinary put-together Seoul man, 20s/early-30s
+- contemporary Korean daily/minimal casual
+- neat hair; avoid exaggerated spiky back hair / Japanese-manga silhouette
+- no bag / strap
 - no glasses
-- simple enough to reproduce in low-fi 2D
+- simple enough for low-fi 2D reproduction
 
-Historical exact V2 styling is defined in `assets/RIGHT_MASTER_V2_SPEC.md`, but later episode-specific visual locks can supersede outfit details visually.
+Episode-specific active image can supersede historical outfit prose.
 
-### 3. Four recurring sets, all retained
-V2 uses a set pool rather than one universal room.
+### 3. Four recurring sets
+Keep all four:
+- `SET_A_HOME`
+- `SET_B_CONVENIENCE`
+- `SET_C_HANGANG`
+- `SET_D_ROOFTOP`
 
-- `SET_A_HOME` — Seoul studio/officetel living room; main/default
-- `SET_B_CONVENIENCE` — convenience-store-front table; signature/high-energy
-- `SET_C_HANGANG` — Hangang night picnic; variation/special
-- `SET_D_ROOFTOP` — Seoul villa rooftop night hangout; variation/special
+No set is discarded merely because another is used more often.
 
-All four are valid production sets. Do not discard C/D merely because A/B are used more often.
+### 4. Reproducibility architecture
 
-### 4. Reproducibility architecture V2
+> **CHARACTER MASTER PACKS → recurring SET / CANONICAL CAST STILL → minimum shot-specific derived first-frame only when required → video generation → edit/crop**
 
-Base V2 architecture:
+Do not rebuild locations or character identities from prose every episode.
 
-> **CHARACTER MASTER PACKS → four EMPTY SET MASTERS → per-set 3-person CANONICAL CAST STILL → shot-specific derived first-frame only when needed → fixed-first-frame I2V → edit/crop**
+For recurring internet-post openings, reusable opening stills are valuable because the phone contains no episode-specific readable text. A new still is required only when a genuinely new starting prop/pose is needed.
 
-Do NOT ask the video model to rebuild a location from prose every episode.
+### 5. Composition
+- generation master: **16:9**
+- final Shorts distribution: 9:16 editorial crop / punch-in
+- fixed frontal or slightly elevated camera baseline
+- medium-wide group framing with hands/upper body visible enough for larger reactions
+- do not ask Omni to vertically redesign a 16:9 canonical image as a new 9:16 scene
 
-For each set:
-1. generate and lock one empty set master
-2. use that exact set image as strict spatial/style reference
-3. attach the three existing character packs
-4. generate one canonical three-person still for that set
-5. use the canonical still directly for ordinary clips
-6. when a scene must visibly begin with a different pose/prop state, make the minimum canon-derived first-frame still that changes only that starting state
+Real P002 evidence showed that vertical recomposition can cause style/face redesign, while a concise 16:9 visual-lock prompt preserved the source drawing language materially better.
 
-Do not create a large shot-family for completeness.
+### 6. Visual prompt principle
 
-### 5. Shared composition geometry
-To improve cross-set consistency:
-- generation master remains 16:9
-- default camera remains fixed, frontal or very slightly above eye level
-- medium-wide group framing
-- three faces clearly visible at similar scale across all sets
-- stable LEFT / CENTER / RIGHT screen zones within a given cast still
-- enough upper-body/hand room for gestures
-- furniture may change by location, but the interaction triangle and face scale should remain similar
+The active image controls appearance. Video text controls motion/performance.
 
-Seat assignment is episode-specific unless a later lock changes this.
+Do not redundantly describe every visible face, outfit and drawing feature. Over-description can encourage reinterpretation.
 
-### 6. Voice direction V2
-Use fixed recurring voice IDs. Seedance audio remains performance/lip-sync guide only.
+Compact lock:
 
-Selected free voice references:
-- LEFT / CHAR_B: `Gaeun outdoors`
-- CENTER / CHAR_06: `Harin`
-- RIGHT male: `Taemin`
+```text
+Use IMAGE 1 as the strict visual authority.
+Animate the existing illustration only.
+Do not redraw, redesign, restyle, beautify, modernize, or reinterpret it.
+Preserve the original faces, eye designs, hairstyles, linework, proportions, colors, clothing, objects, background, and 16:9 composition.
+```
 
-V2 character direction:
-- `CHAR_B`: ordinary 20s/30s Korean woman, friendly everyday tone, somewhat lively; retains skeptical/indignant edge but is NOT cold, monotone or permanently deadpan
-- `CHAR_06`: noticeably more lively, bright and energetic; sincere, confident, conversational; not influencer/MC or anime-cute
-- RIGHT male: ordinary 20s/30s Korean man, playful low-mid everyday tone, quick social timing, short natural laugh; not announcer/comedy-actor macho voice
+### 7. Voice status
+Historical/interim TopView references:
+- LEFT: Gaeun outdoors
+- CENTER: Harin
+- RIGHT: Taemin
 
-Detailed audition rules live in `assets/VOICE_REGISTRY.md`.
+These are **not final recurring production voices yet**.
 
-### 7. Reaction / acting V2
-V1 over-optimized for stability. V2 increases entertainment energy.
+The 4-sec trimmed previews solved the observed 15.2-sec reference-audio ceiling and Taemin loudness imbalance, but the real P002 speech still sounded too mechanical.
 
-Keep causal staggering, but increase visible reaction amplitude.
+Current voice/performance architecture is defined in `PERFORMANCE_AUDIO_ARCHITECTURE.md`:
+- whole-scene dialogue generated once
+- natural timing first
+- video duration derived from that performance
+- same dialogue master drives Omni timing and is reused as final publishable audio
 
-Allowed:
-- clear eye direction changes
-- more readable head turns
-- visible smiles / incredulous expressions / offended stares
-- short torso lean or recoil
-- shoulder bounce on laughter
-- one-hand gestures
-- two-hand gestures when motivated
-- brief raised fist / small celebratory fist
-- open-palmed disbelief gesture
-- brief table tap if geometry remains stable
+### 8. Performance / reaction amplitude — increased again
 
-Still avoid:
-- everybody reacting at once
-- constant gesturing
-- full-body flailing
-- extreme mouth opening
-- tightly squeezed/deformed eyes
-- neck/hand/body warping
-- gestures crossing another character's face for long periods
+V2 target:
+> **bigger, funnier, socially physical, causally staged, and still geometry-aware.**
 
-Target principle:
-> **bigger and funnier, but causally staged and model-safe.**
+Allowed / desired when motivated:
+- clear eye direction and face changes
+- strong head turn
+- substantial torso lean/recoil
+- arm fully extended while making a point
+- phone clearly extended toward friends
+- two-hand disbelief
+- posture shift / fidget / turning body toward another character
+- hand to forehead / face-covering
+- bending forward laughing
+- irritated/exasperated body language
+- brief table tap
+- quick celebratory movement
+- **brief playful contact**, e.g. one friend taps another's upper arm/shoulder
 
-### 8. Content/source rules remain unchanged
-The V2 relock does NOT change the editorial source discipline:
-- real Korean community posts/comments remain primary source
-- AI-written spoken beats <= 30%
-- AI-invented comedic payoff should remain approximately 0%
-- performance/distribution learning should change selection/experiments, not automatically rewrite dialogue into generic optimized copy
+For contact, specify exact contact location and brief duration rather than vague `hit` language.
 
-### 9. Real-episode opening / first-frame grammar
-The fixed first-frame rule applies to each generated clip, not necessarily to the entire edited episode.
+Baseline for an ~8–12 sec-ish compact clip:
+- about 1–2 larger physical beats
+- plus facial/head/torso reactions
+- reactions remain causally staggered rather than all firing simultaneously
 
-A canonical cast still is the visual authority. It is not a command that every scene must literally begin from the same resting pose.
+Avoid only genuinely unstable behavior:
+- prolonged complex body entanglement
+- hands crossing faces for long periods
+- full-body flailing without a story reason
+- anatomy/object warping
 
-For a recurring internet-post opener:
-- CENTER may already hold a smartphone in a canon-derived opening still;
-- the clip then starts immediately on the topic hook instead of spending generation time reaching for a newly invented phone;
-- the exact spoken phrase should remain flexible (`야 이거 봐`, `이거 봤어?`, or direct source claim) rather than using a formal canned `오늘의 주제!` every episode.
+### 9. Eye acting — expressive, but transitions must be clean
 
-For continuity between AI clips:
-- prefer intentional editorial hard cuts between canon-derived stills;
-- do not automatically use the previous generated clip's last frame as the next first frame, because that compounds identity/style drift;
-- use last-frame chaining only when a real continuous action requires it and the visual risk is worth it.
+Do **not** ban blinking or closing eyes.
 
-The final 9:16 short gets perceived shot variation from editorial crop/punch-in, not AI camera movement.
+Allowed and useful:
+- blink
+- wink
+- eye-smile
+- wide-eyed surprise
+- eyes squeezed shut for laughter/frustration
 
-## Current execution order — updated 2026-09-04
+Hard fail:
+- melted or misaligned eyes
+- asymmetric accidental half-closure
+- ambiguous intermediate state where the eye is neither intentionally open nor cleanly closed
 
-1. V2 recurring visual direction — DONE.
-2. Free recurring voice references selected — DONE (`Gaeun outdoors / Harin / Taemin`).
-3. P001 Omni pilot package — preserved but no longer active.
-4. User selected the convenience-store-front three-person image supplied in the 2026-09-04 session as the base for the first full episode — ACTIVE VISUAL AUTHORITY FOR P002.
-5. Source/storyboard agent selected a real-source P002 topic and created `episodes/P002/SOURCE_PACK.md` — DONE.
-6. Full two-clip episode storyboard created at `episodes/P002/FULL_EPISODE_PACKAGE.md` — DONE.
-7. Create only one new visual asset next: `P002_OPENING_STILL`, derived from the user's current convenience image with CENTER already holding a phone. Do not redesign anything else.
-8. Generate Clip 1 once at 8 sec, QC it as production footage rather than a pilot.
-9. Generate Clip 2 once at 8 sec only if Clip 1 has no hard blocker.
-10. Assemble 9:16 distribution master with editorial punch-ins and subtitle/localization in post.
-11. Publish and enter 24h/7d performance-learning loop.
+Prompt principle:
+
+```text
+Natural blinking, winking, eye-smiles and motivated eye closure are allowed.
+Every eye action must form one clean intentional expression.
+Preserve the original eye design before and after the expression.
+Never create melted, misaligned, ambiguously half-closed in-between eye shapes.
+```
+
+### 10. Mouth animation — plausibility over phoneme perfection
+
+Real P002 evidence showed that phoneme-perfect Korean lip-sync looks uncanny on the simple webcomic faces.
+
+New rule:
+- correct active speaker / turn timing matters
+- exact Korean mouth phonemes do not
+- use a few small stylized 2D mouth states
+- avoid large jaw motion, wide vowel shapes, realistic lip pursing, face reshaping
+
+Target is believable hand-drawn mouth-flap rhythm.
+
+### 11. Opening grammar
+Recurring visual device:
+- one friend already has the phone where useful
+- opener varies naturally (`야 이거 봐`, `이거 봤어?`, direct claim)
+- others physically attend to the phone
+- conversation begins immediately
+
+Do not make the recurring opener feel like a formal MC segment.
+
+`Post Card` / community-card insert is **optional**, not default. Do not create a mandatory overlay/hard-cut production step unless the episode genuinely needs it.
+
+### 12. Clip/duration policy — superseded from fixed 2 x 8
+
+Default now:
+> **one compact generated clip of whatever duration the completed performance naturally needs**
+
+Use multiple clips only when:
+- the real source has enough beats;
+- there is a genuine shot/state change;
+- one clip would force rushed dialogue or overloaded physical action.
+
+Video duration must follow the completed natural performance, not the reverse. See `PERFORMANCE_AUDIO_ARCHITECTURE.md`.
+
+### 13. Content/source rules unchanged
+- real Korean community posts/comments remain primary
+- AI-written spoken beats <= 30% target
+- AI-invented comedic payoff approx 0%
+- preserve human phrasing/attitude through light oralization
+- no neat moralizing outro by default
+
+## P002 real production evidence
+
+### Evidence A — failed restyle/recomposition
+A generated output changed drawing style/face proportions from the beginning while vertically recomposing a 16:9 source.
+
+Lesson: preserve 16:9 generation authority and use concise motion-focused prompts.
+
+### Evidence B — viable single-clip test
+A later ~10-sec 16:9 Omni test preserved style much better and confirmed that opener + several response beats can work in one compact clip.
+
+Useful positives:
+- single-clip structure is viable
+- social reaction order was readable
+- larger gestures were feasible
+- loudness normalization worked
+
+Not publishable because:
+- speech sounded mechanical
+- preselected duration forced unnatural tempo
+- mouth animation was uncanny
+- CENTER had a malformed eye-close transition near the beginning
+
+Do not interpret this as a reason to reduce acting amplitude or ban eye expressions. Fix the performance/audio/face-transition architecture instead.
+
+## QC hierarchy — updated
+
+Short malformed transitions can last only a few frames. Representative montage QC is insufficient.
+
+Mandatory order:
+1. first 0.5 sec frame-by-frame
+2. every blink / wink / eye-close transition
+3. speaker handoff windows around ±0.2 sec
+4. maximum-mouth-opening frames
+5. identity/style at first/middle/end
+6. hands/contact/table/prop intersection
+7. reaction amplitude and causal clarity
+8. audio naturalness / pacing / speaker separation / loudness
+9. minor expression-tone differences last
+
+Hard fail includes an uncanny eye/face morph even if it lasts only a fraction of a second.
+
+## Current execution order — NEXT SESSION
+
+1. Read `CURRENT_STATE.md`.
+2. Read `PERFORMANCE_AUDIO_ARCHITECTURE.md`.
+3. Read active P002 source/package.
+4. Finalize P002 `PERFORMANCE MASTER` with compact source-driven dialogue + **1–2 larger physical beats**.
+5. Generate the whole multi-speaker dialogue once in two strong Korean dialogue engines (initial A/B: ElevenLabs v3 Dialogue vs Typecast / best accessible equivalent).
+6. Choose one natural `P002_DIALOGUE_MASTER.wav`.
+7. Measure actual duration and extract/derive turn timestamps automatically.
+8. Derive video duration from the natural performance.
+9. Make exactly one new 16:9 Omni generation using the dialogue master as timing authority, concise visual lock, larger physical acting, clean eye transitions and limited 2D mouth animation.
+10. Run frame-level QC.
+11. If pass: final 9:16 edit / subtitles / thumbnail / publish.
+
+Do not return to pilot-for-pilot testing or fixed 2 x 8 sec by default.
 
 ## Repository integrity note
 
-As of the 2026-09-04 GitHub inspection, `CURRENT_STATE.md` / older handoff prose claimed that `assets/V2_VISUAL_LOCK_20260904.md` and binaries under `assets/v2_locked/` were preserved, but those paths were not present on the inspected `main` tree. Do not claim those binaries are safely mirrored until that is actually verified.
-
-The user-supplied convenience image in the current session is therefore treated as an active external visual authority, not as a GitHub-resident binary.
-
-## What must NOT be lost in later sessions
-
-- V2 was reopened intentionally because V1 looked too sparse/cheap and too restrained, not because V1 failed basic reproducibility.
-- Four sets are wanted, not one replacement set.
-- Reference fidelity/reproducibility remains a top priority.
-- Larger reactions and one/two-hand gestures are explicitly allowed.
-- Fixed first frame means fixed start of each generated clip, not one universal pose for the whole finished episode.
-- Real episodes may use a minimal canon-derived opening still such as CENTER already holding a phone.
-- Do not drift back into pilot-for-pilot testing when a publishable 2 x 8 sec episode can validate the same system more usefully.
+Older prose claimed some canonical binaries existed under `assets/v2_locked/`, but those paths were not verified on inspected `main`. Do not claim image binaries are GitHub-preserved unless actually verified.
