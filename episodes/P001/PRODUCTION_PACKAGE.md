@@ -1,7 +1,7 @@
 # P001 PRODUCTION PACKAGE — 쓸모없는 암호
 
 Updated: 2026-09-03 KST  
-Status: **Scene A locked / Scene B next**
+Status: **Scene A locked / Scene B exact package ready**
 
 The old 38.5-second six-shot package is removed. Git history is the archive.
 
@@ -33,6 +33,12 @@ Video remains locked. Exact used prompt/QC: `SCENE_A_LOCK.md`.
 
 Its Seedance voice is not final. Preserve the picture and replace CENTER/LEFT speech with their fixed voice IDs during final audio post.
 
+## Scene B exact package
+
+Single authority: `SCENE_B_PACKAGE.md`
+
+The exact prompt, input order, 10-second UI setting, one-generation rule, beat timing and PASS criteria are stored there. Do not rewrite or shorten that prompt before generation.
+
 ## Scene B requirements
 
 - same locked 3-person first frame and three master packs
@@ -45,6 +51,12 @@ Its Seedance voice is not final. Preserve the picture and replace CENTER/LEFT sp
 - reactions staggered 0.1–0.4 sec
 - no subtitles/music/new objects/camera movement generated
 - final 9:16 framing done in edit
+
+## Voice registry
+
+Single authority: `../../assets/VOICE_REGISTRY.md`
+
+The three voice profiles and audition prompts are locked there. Actual voice IDs remain unassigned and block publishing, not Scene B generation.
 
 ## Voice plan
 
