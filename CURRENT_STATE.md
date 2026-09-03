@@ -1,181 +1,256 @@
 # CURRENT STATE
 
 Updated: 2026-09-04 KST
-Status: **V2 BASELINE ESTABLISHED — P002 IN REAL PRODUCTION / 4-SECOND VOICE REFERENCES REQUIRED**
+Status: **P002 ARCHITECTURE RELOCKED — PERFORMANCE-FIRST AUDIO / SINGLE-CLIP RETRY NEXT**
 
 ## 지금의 단일 결론
 
-P001 Scene B를 또 하나의 격리된 파일럿으로 생성하는 작업은 현재 active next action이 아니다.
+P002의 첫 viable 10초 단일클립 테스트는 visual fidelity와 single-clip 가능성을 확인했지만 **publishable final은 아니다**.
 
-사용자 판단대로 이제 테스트를 위한 테스트를 중단하고, 실제 공개 가능한 짧은 완성본을 만드는 과정에서 동시에 visual / voice / reaction / editing grammar를 검증한다.
+실제 문제는:
+- 음성이 기계적이고 고정 영상길이에 맞춰 속도가 왜곡됨
+- phoneme-perfect lip sync가 단순 2D 얼굴에 기괴하게 보임
+- 시작부 CENTER eye-close transition이 malformed 상태로 지나감
+
+따라서 다음 단계는 tiny prompt tweak가 아니라 **PERFORMANCE FIRST** 구조로 한 번 재생성하는 것이다.
 
 현재 권위 문서:
-- V2 series baseline: `SERIES_V2_RELOCK.md`
-- P002 source provenance: `episodes/P002/SOURCE_PACK.md`
-- P002 complete storyboard: `episodes/P002/FULL_EPISODE_PACKAGE.md`
-- voice runtime constraint: `assets/VOICE_REFERENCE_RUNTIME_RULES.md`
+- current action: `CURRENT_STATE.md`
+- immutable editorial principles: `PROJECT_BIBLE.md`
+- V2 visual/reaction baseline: `SERIES_V2_RELOCK.md`
+- **performance/audio/face-animation architecture: `PERFORMANCE_AUDIO_ARCHITECTURE.md`**
+- reusable prompt/style grammar: `CORE_DESIGN_AND_PROMPTS.md`, `MASTER_STYLE_PROMPT.md`
+- P002 source: `episodes/P002/SOURCE_PACK.md`
+- P002 active production package: `episodes/P002/FULL_EPISODE_PACKAGE.md`
 
 ## 큰 파이프라인
 
-`Radar/Source → Thread/Gold → Episode Package → User Production → Defect QC → Distribution/Performance Learning`
+`Real Community Source → Gold Comments → PERFORMANCE MASTER → Whole-Scene Dialogue Master → Timing Extraction → Derived Video Duration → Omni Generation → Frame-level QC → 9:16 Edit → Publish → Performance Learning`
 
-콘텐츠 원천성/성과 루프는 유지한다.
+## 고정 체크포인트
 
-## V2 recurring direction
+- 쇼츠 우선
+- 실제 한국 커뮤니티 원문/댓글 우선
+- opener는 친구가 폰에서 뭔가 발견한 자연스러운 `야 이거 봐` 계열
+- Post Card는 optional, 기본 공정 아님
+- 기준 이미지 / 캐릭터 identity 절대 우선
+- generation master 16:9 → distribution 9:16
+- **자연스러운 performance가 영상 길이를 결정**
+- single compact clip 우선; 소스가 필요할 때만 multi-clip
+- 입은 그럴듯한 limited 2D mouth flap; phoneme-perfect realism 금지
+- blink / wink / eye-smile / 눈 질끈 감기 등 자연스러운 눈 감정표현은 허용
+- 단, malformed half-closed morph transition은 hard fail
+- 리액션/행동은 더 크게: 1–2 large physical beats + causal social reactions
+
+## Recurring cast / set
 
 ### Cast
 - LEFT: CHAR_B / white-T-shirt woman
 - CENTER: CHAR_06
 - RIGHT: recurring male identity
 
-Selected free voice references:
-- LEFT: Gaeun outdoors
-- CENTER: Harin
-- RIGHT: Taemin
-
-### Voice-reference runtime lock — NEW
-TopView / Seedance 2.0 Mini R2V rejected a request because total attached audio-reference duration exceeded **15.2 sec**. Credits were refunded.
-
-New production rule:
-- create one clean **~4.0 sec** recurring audio reference per character
-- three 4-sec references total about 12 sec and fit below the observed 15.2-sec ceiling
-- attach only the references for characters who actually speak in that clip whenever possible
-- silent characters do not need an audio reference and must be explicitly marked silent/no lip-sync in the prompt
-- do not attach the three full-length catalog preview files by default
-
-Authority: `assets/VOICE_REFERENCE_RUNTIME_RULES.md`
-
 ### Set pool
-1. `SET_A_HOME` — main/default
-2. `SET_B_CONVENIENCE` — signature/high-energy
-3. `SET_C_HANGANG` — variation/special
-4. `SET_D_ROOFTOP` — variation/special
+1. `SET_A_HOME`
+2. `SET_B_CONVENIENCE`
+3. `SET_C_HANGANG`
+4. `SET_D_ROOFTOP`
 
-### Reaction grammar
-V2 is intentionally more visible and energetic than V1.
+Current P002 visual authority remains the user-supplied convenience-store-front three-person image / opening-still family from the 2026-09-04 session. If old prose conflicts with the active image, the image controls.
 
-Allowed/desired when causally motivated:
-- readable eye changes and head turns
-- visible facial reactions
-- short torso lean/recoil
-- shoulder bounce
-- one/two-hand gestures
-- open-palmed disbelief
-- compact celebratory fist
+## P002 evidence from real generations
 
-Avoid simultaneous mass reaction, constant gesturing, full-body flailing and anatomy deformation.
+### Failed vertical/restyle attempt
+A generated result was vertically recomposed despite a 16:9 source still and visibly changed faces/linework/style from the first frames.
 
-## Important first-frame clarification
+Current lesson:
+- do not generate the recurring cast master as a new 9:16 composition
+- keep Omni generation 16:9
+- final 9:16 comes from editorial crop/punch-in
+- do not redundantly re-describe every visible face/outfit/style feature in the prompt
 
-The fixed first frame is the literal visual start of **each generated AI clip**.
+### Viable 16:9 single-clip attempt
+A later 10-sec 16:9 Omni generation with a concise visual-lock prompt preserved the source drawing style materially better and demonstrated that opener + multiple response beats can fit one short clip.
 
-It is NOT a rule that the finished episode must always begin from one universal resting cast pose.
+Good evidence:
+- visual identity/style remained much more stable
+- single-clip structure is feasible
+- staggered social reactions worked
+- larger gestures were feasible
+- normalized voice-reference loudness worked; Taemin was approximately +10 dB quieter in the source preview and was raised to roughly match Gaeun/Harin
 
-Real-episode architecture:
+But the clip is **not final** because:
+- generated dialogue sounded synthetic/mechanical
+- fixed video duration pushed speech pacing unnaturally
+- mouth shapes were too literal / uncanny
+- CENTER's eye-close transition near the opening contained malformed ambiguous frames
 
-> **canonical cast still → minimum shot-specific derived first-frame stills → fixed-first-frame I2V clips → editorial hard cuts / crop / punch-in**
+Do not spend time repairing small ending-expression details on this clip; architecture-level defects dominate.
 
-If a clip must start with CENTER already holding a smartphone, create one canon-derived opening still with only that starting state changed. Do not waste video time asking the model to invent the phone and perform a long reach from the neutral master.
+## Voice status — important correction
 
-Do not automatically chain the last frame of Clip 1 into Clip 2; that can compound drift. Prefer a hard cut between canon-derived states unless continuous physical action actually requires last-frame chaining.
+Historical/interim selected TopView references:
+- LEFT: `Gaeun outdoors`
+- CENTER: `Harin`
+- RIGHT: `Taemin`
 
-## Current active visual authority
+4-second trimmed reference files were prepared because Seedance 2.0 Mini R2V rejected total reference audio above 15.2 sec.
 
-For P002, use the user-supplied 2026-09-04 convenience-store-front three-person image as the active exact visual authority.
+However, **the 4-sec TopView reference architecture is now interim evidence, not the desired final production voice system**. The first real result sounded too mechanical.
 
-It controls what is visibly present in this episode: faces, clothing, drawing style, seating, table, props and set geometry.
+Next direction:
+- generate the whole multi-speaker scene once in a dialogue-capable external engine
+- first A/B candidates: ElevenLabs v3 Dialogue vs Typecast
+- prioritize natural Korean prosody, turn-taking, pauses, emotion, stable recurring voices, and low manual labor
+- output one `P002_DIALOGUE_MASTER.wav`, not separate manually placed lines
 
-If older prose in the repository conflicts with this current locked image, do not force the stale prose back onto the image for P002.
+Authority: `PERFORMANCE_AUDIO_ARCHITECTURE.md`.
 
-## Repository integrity finding
+## PERFORMANCE FIRST — current core architecture
 
-During the 2026-09-04 GitHub inspection, the repository contained text claiming that `assets/V2_VISUAL_LOCK_20260904.md` and canonical binaries under `assets/v2_locked/` had been preserved, but those paths were not found on the inspected `main` tree.
+Do not choose `10 sec` first.
 
-Therefore:
-- do not claim those visual binaries are safely mirrored in GitHub;
-- the current convenience image is an external/session visual authority until a binary upload path is actually completed;
-- this discrepancy is explicitly recorded rather than hidden by stale handoff prose.
+1. Write one `PERFORMANCE MASTER` containing exact dialogue + emotion + while-speaking actions + pause-requiring nonverbal beats + reaction order.
+2. Generate the **whole scene audio in one pass**.
+3. Measure actual dialogue-master duration.
+4. Extract/derive speaker-turn and silence timestamps automatically.
+5. Derive required video duration from actual performance, leaving approximately 0.4–0.7 sec reaction tail for fixed-duration Mini routes.
+6. Feed the same whole-scene dialogue master to Omni as the timing/performance authority.
+7. Generate one 16:9 clip.
+8. For publishable audio, use the original dialogue master at time 0 rather than manually syncing separate lines.
 
-## P001 status
+This still needs one real validation generation. Target is **turn-level sync**, not phoneme-perfect lip sync.
 
-Preserve P001 as historical evidence.
+## Face animation lock — corrected
 
-- source: `episodes/P001/SOURCE_PACK.md`
-- V1 Scene A lock remains evidence
-- V1 Scene B package remains evidence
-- V2 Omni reference pilot package remains prepared evidence
-- **do not spend credits on the P001 Omni pilot as the current next step**
+### Mouth
+Use limited stylized 2D mouth animation:
+- closed
+- slightly open
+- small relaxed open
 
-## P002 — first complete episode
+Do not demand realistic Korean phoneme mouth shapes. The goal is visually plausible mouth-flap rhythm with correct active-speaker timing.
 
-Source/storyboard agent selected a real Korean community source about AI-era entry-level developer hiring.
+### Eyes
+Do NOT ban blinking or eye closure.
 
-Source pack:
-- `episodes/P002/SOURCE_PACK.md`
+Allowed/desired when motivated:
+- natural blink
+- wink
+- eye-smile
+- wide-eyed surprise
+- brief squeezed-eye laugh / frustration
 
-Current production concept:
-- two generated clips
-- current generation duration target: **10 sec + 10 sec**, because dialogue + staggered social reactions need more room than the previous 8-sec test assumption
-- final edited short is expected to be shorter than the raw 20 sec after dead-frame trimming
-- SET_B_CONVENIENCE visual authority
-- Clip 1 integrates the topic-opening device rather than adding a separate formal intro clip
-- Post Card is a post-production overlay, not a Seedance-generated third clip
-- Clip 2 delivers the later source reactions
-- 16:9 generation master → 9:16 editorial distribution master
-- subtitles/localization added in post, not baked into AI generation
+Hard fail:
+- melted / misaligned / asymmetric half-closed intermediate states
+- an eye that looks neither intentionally open nor intentionally closed
 
-### Opening device
-Use the CENTER character + smartphone as a recurring internet-source device, but avoid formal canned hosting such as `오늘의 주제!` by default.
+Expression transitions must be clean and return to the locked reference eye design.
 
-Preferred behavior:
-- visual routine repeats
-- spoken hook varies naturally: `야 이거 봐`, `이거 봤어?`, or direct source claim
+## Reaction / physical performance — increase further
 
-This gets to the content faster and feels more like friends talking than a TV host segment.
+V2 should not regress to tiny head turns and polite micro-gestures.
 
-## 바로 다음 행동
+Desired when motivated:
+- strong torso lean/recoil
+- phone clearly extended toward the others
+- arm fully extended while making a point
+- two-hand disbelief
+- shifting/repositioning seated posture
+- irritated body language
+- hand to forehead / covering face
+- bending forward laughing
+- brief table tap
+- **brief playful contact**, e.g. one friend taps another's upper arm/shoulder
 
-### Step 1 — prepare three short recurring audio references
-Create clean ~4-second reference clips:
-- `VOICE_REF_LEFT_GAEUN_4S`
-- `VOICE_REF_CENTER_HARIN_4S`
-- `VOICE_REF_RIGHT_TAEMIN_4S`
+For contact actions, specify exact target and duration; do not use vague `hits him` language.
 
-### Step 2 — generate P002 Clip 1 once
-- Seedance 2.0 Mini
-- 480p
-- 16:9
-- 10 sec
-- generation count exactly 1
-- first frame: P002 opening still with CENTER already holding phone
-- attach only CENTER/Harin 4s + RIGHT/Taemin 4s because LEFT is silent
-- QC this as actual production footage, not a pilot
+Baseline for an ~8–12 sec short:
+- about 1–2 larger physical beats
+- plus eye / face / head / torso social reactions
+- causal staggering remains important
 
-### Step 3 — if no hard blocker, generate Clip 2 once
-- 10 sec
-- use the original convenience cast still / canon-derived neutral state as the new first frame
-- attach only LEFT/Gaeun 4s + CENTER/Harin 4s because RIGHT is silent
-- intentional editorial cut; do not chain from Clip 1 last frame
+## Current opening grammar
 
-### Step 4 — assemble publishable 9:16 master
-- editorial punch-ins instead of AI camera moves
-- Post Card overlay during Clip 1; it is not a third generated clip
-- Korean/English subtitle treatment in post
-- no explanatory outro
-- publish → 24h / 7d performance learning
+Default:
+- one friend already holds the phone in the opening still when required
+- natural opener (`야 이거 봐`, `이거 봤어?`, or direct claim)
+- the others visibly attend to the phone
+- conversation immediately follows
 
-## Mandatory pre-generation inheritance check
+`Post Card` / community-card insert is **optional only**. It is not a mandatory overlay, hard cut, third clip, or recurring production burden.
 
-Before presenting or submitting any scene prompt:
-- active episode image is the visual authority
-- attached voice-reference total duration stays within the active model limit
-- only speaking-character references are attached whenever possible
-- voice-reference speaker mapping is explicit
-- V2 reaction rules are translated into visible scene-specific actions
-- first frame matches the first visible action of that clip
-- no superseded V1 phrases such as `subtle acting`, `small reactions`, or blanket `no large gestures`
-- model / resolution / duration / generation count match the approved task
-- no unnecessary extra pilot or reference test is inserted before the publishable episode
+## Current duration / clip policy
+
+The previous fixed `2 x 8 sec` and later `10 + 10` assumptions are superseded.
+
+New default:
+> **one compact clip of whatever duration the completed performance naturally requires**
+
+Use multiple clips only if:
+- the source contains enough real additional material;
+- there is a genuine shot/state change;
+- one clip would force rushed speech or overloaded motion.
+
+For Seedance 2.0 Mini fixed-duration routes, derive duration from the completed audio master, not vice versa.
+
+## Mandatory QC hierarchy — updated
+
+Representative-frame montage alone is insufficient.
+
+Before PASS:
+1. inspect the **first 0.5 sec frame-by-frame**
+2. inspect every blink / wink / eye-close transition frame-by-frame
+3. inspect speaker handoff windows around ±0.2 sec
+4. inspect maximum-mouth-opening frames
+5. compare identity/style at first / middle / end
+6. inspect hands, physical contact, table/prop intersections
+7. assess reaction amplitude and causal readability
+8. assess audio naturalness, pacing, speaker separation, loudness
+9. only then consider minor expression-tone details
+
+Hard fail includes uncanny face morphs even if they last only a few frames.
+
+## 바로 다음 행동 — NEXT SESSION START HERE
+
+### Step 1 — build final P002 PERFORMANCE MASTER
+Keep the real-source logic, but redesign the 8–12 sec-ish performance with:
+- compact dialogue
+- 1–2 larger motivated physical beats
+- explicit concurrent actions vs pause-requiring nonverbal beats
+- clean reaction order
+
+### Step 2 — whole-scene voice A/B
+Generate the complete three-speaker conversation once in:
+- ElevenLabs v3 Dialogue
+- Typecast or the strongest accessible Korean multi-speaker dialogue engine
+
+Compare naturalness and recurring-voice viability. Do not generate line-by-line and manually place each sentence.
+
+### Step 3 — lock one dialogue master
+Create `P002_DIALOGUE_MASTER.wav`, then measure duration and extract turn timestamps.
+
+### Step 4 — derive video duration
+For Mini/fixed-duration route, use roughly `ceil(dialogue duration + 0.4–0.7 sec)` or the nearest supported duration.
+If a verified smart-duration route is accessible in the actual execution environment, it may be tested instead.
+
+### Step 5 — one new production generation only
+- Omni Reference
+- active P002 opening still
+- generation master 16:9
+- higher generation resolution than 480p if cost/availability is acceptable
+- dialogue master audio as timing/performance authority
+- compact visual-lock prompt
+- larger physical acting
+- clean eye transitions
+- limited 2D mouth animation
+- exactly one generation before QC
+
+### Step 6 — frame-level QC
+Use the hierarchy above. Only after this architecture-validation clip passes, proceed to final 9:16 edit/subtitles/thumbnail/publish.
+
+## Repository integrity note
+
+Older prose once claimed canonical binaries under `assets/v2_locked/`; that claim was not verified on inspected `main`. Do not claim current opening/base image binaries are GitHub-preserved unless an actual binary upload is verified.
 
 ## 응답 규칙
 
@@ -183,3 +258,5 @@ Before presenting or submitting any scene prompt:
 1. 큰 흐름
 2. 현재 세부 단계
 3. 이번 턴 완료조건
+
+Near the top also retain the concise fixed checkpoint so long sessions do not lose the production priorities.
