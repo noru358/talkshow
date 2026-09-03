@@ -1,186 +1,86 @@
 # CURRENT STATE
 
-Updated: 2026-09-03 KST
+Updated: 2026-09-03 KST  
+Status: **P001 Scene A locked / Scene B package next**
 
-## Absolute current phase
-**PHASE 2 — real episode production / P001 manual generation ready**
+## 지금의 단일 결론
 
-The user has confirmed that the production pipeline lock is complete. The user will perform video generation and editing manually. ChatGPT's current responsibility is limited to supplying the exact prompts, source-grounded dialogue, generation order, QC criteria, and user action checklist.
+세트 테스트로 돌아가지 않는다. 사용자가 외부 도구에서 직접 제작한다.
 
-Do not return to set tests, isolated character tests, or 3-person reproducibility tests.
+`Radar/Source → Thread/Gold → Episode Package → User Production → Defect QC → Distribution/Performance Learning`
 
-Broad concept planning is complete enough. Do not restart or return to design-for-design's-sake.
+독립 소프트웨어 에이전트들이 배포된 상태는 아니다. 현재 ChatGPT가 상류 편집 역할과 QC/학습 역할을 합쳐 수행하고 사용자가 생성·편집·게시한다.
 
-The current bottleneck is now:
-> **design and manual generation of P001 Scene B after Scene A production lock.**
+## P001
 
-Current operating mode: **MANUAL TOPVIEW PROMPT WORKFLOW ONLY**.
+- source: `episodes/P001/SOURCE_PACK.md`
+- Scene A: `260903_0001_video_edit_2387.mp4`, 7.104초, 영상 PASS, 재생성 금지
+- Scene A exact prompt/QC: `episodes/P001/SCENE_A_LOCK.md`
+- Scene B: 8–12초, 인간 원문 반전 + 사회적 펀치
+- 최종: 약 15–22초, 2 scenes
+- 폐기: 38.5초/6숏 계획, `BRIDGE_01`
 
-## 0-Priority continuity authority
-The project's core design decisions and exact reusable prompt library are preserved in:
+## 잠금
 
-**`CORE_DESIGN_AND_PROMPTS.md`**
+### 영상 생성
 
-This is the 0-priority continuity source for:
-- core format/design principles
-- `SET_MASTER_01 → CAST_MASTER → I2V` architecture
-- set specification
-- character visual constraints
-- compact style/set/character prompt blocks
-- exact `SET_MASTER_01` prompt
-- exact `CAST_MASTER` template
-- exact baseline I2V prompt
-- current lip/eye/reaction micro-controls
-- earlier successful long CHAR_06 prompt
-- known failure history and decisions
-- QC priority order
-- prompt-budget rules
+- `SET_MASTER_01 → CAST_MASTER → fixed-first-frame I2V → edit crop`
+- Seedance 2.0 Mini / 480p / 16:9
+- 같은 3인 cast-master와 3개 master pack 재사용
+- 반응은 trigger 이후 0.1–0.4초 간격으로 순차 시작
 
-If older documents conflict with the current production method, use **`CORE_DESIGN_AND_PROMPTS.md` + `CURRENT_STATE.md`** as authority. Older docs remain historical evidence only.
+### 화면비
 
-Whenever a core production rule or core prompt changes, update `CORE_DESIGN_AND_PROMPTS.md`; do not allow it to be summarized away during handoff.
+- **generation master: 16:9**
+- **distribution master: 9:16**
+- P001은 세로 캔버스 안에 16:9 원본을 그대로 작게 레터박스하는 방식으로 끝내지 않는다.
+- 16:9 master를 이용하되 편집에서 speaker punch-in/crop, 상단 hook, 하단 subtitle safe zone으로 9:16을 구성한다.
+- 이 결정은 기존 visual lock을 깨지 않으면서 Shorts/Reels/TikTok용 최종물을 세로 네이티브로 만든다.
 
-## High-level format
-- Real Korean community posts/comments are source material.
-- Usually 3 characters; 2 or 4 may appear.
-- Character functions are fluid beat-by-beat, not permanently fixed boke/tsukkomi roles.
-- Final feel: casual people talking in an ordinary room/livestream, not a polished TV/podcast studio.
-- Current short-form duration is source-driven: usually 15–22 sec for one strong comment chain, 22–35 sec only when genuine source beats support it; later possible ~3 min.
-- Final episodes are assembled from short clips, never one continuous 30–180 sec AI generation.
+### 음성
 
-## Generation settings
-- Default: **Seedance 2.0 Mini**
-- 480p, 16:9
-- short clips usually 7–12 sec; simple comment-chain episodes normally use 2 dense scenes
+Seedance의 회차별 랜덤 음성을 최종 캐릭터 음성으로 수용하지 않는다.
 
-## Character lock status
-- **CHAR_06**: long wavy dark hair with bangs, beige top, **NO GLASSES**. Single-character viability passable.
-- **CHAR_B / white T-shirt woman**: light-brown bob, white fitted short-sleeve T-shirt, light-blue jeans, **NO GLASSES**. Identity broadly passable.
-- **Gray-hoodie male**: messy short black hair, gray hoodie, dark pants, **NO GLASSES**. Identity broadly passable.
-- Do not run isolated character tests just for completeness.
+잠금된 방식:
+1. I2V에는 현재처럼 실제 대사를 넣어 입 모양·호흡·연기를 얻는다.
+2. 생성 음성은 performance guide로만 사용한다.
+3. 발화자별 오디오 구간을 분리한다.
+4. ElevenLabs Voice Changer의 multilingual model로 캐릭터별 고정 voice ID에 변환한다.
+5. 타이밍을 유지해 원 영상에 교체한다.
+6. 웃음/겹말이 분리되지 않으면 그 짧은 구간만 같은 voice ID의 TTS로 대체한다.
 
-## Key QC history
-- `260902_0019_video_edit_1279.mp4`: CHAR_06 viable; dialogue fast at 5 sec; style slightly cleaner than master; character itself acceptable.
-- `260902_0025_video_edit_4946.mp4`: CHAR_B acceptable; room/furniture changed, proving set consistency is a separate issue.
-- `260902_0027_video_edit_6351.mp4`: richer room failed physical grounding; character looked pasted on background. Decision: simplify set rather than add more prompt prose.
-- `260902_0028_video_edit_3438.mp4`: historical pre-lock test. Ultra-simple room improved grounding, but identity/seat assignment and acting were not yet locked.
-- `260902_0033_video_edit_2781.mp4`: production stability baseline. Small residual issue: slightly unnatural mouth motion.
-- `260902_0034_video_edit_2921.mp4`: livelier acting baseline. Small residual issue: slight eye deformation during smiling/blinking.
-- `260903_0001_video_edit_2387.mp4`: **P001 Scene A production pass and lock.** 7.104 sec; stable identity/set/speakers and materially improved social interaction. Residual issue: RIGHT anticipates the laugh before LEFT's trigger phrase.
+따라서 무성 I2V로 바꾸지 않으며 기존 프롬프트 문법도 유지한다. P001 공개 전 세 캐릭터의 실제 voice ID를 한 번 정해 이후 변경하지 않는다. 현재 ID는 미지정이며 이는 **게시 blocker**, Scene B 영상 생성 blocker는 아니다.
 
-## Historical pre-lock 3-person failure — intended vs actual
-Intended:
-- Left = white T-shirt woman
-- Center = CHAR_06
-- Right = gray-hoodie male
+### AI 신규 대사
 
-Actual visual read:
-- Left = CHAR_06
-- Center = white T-shirt woman with glasses-like drift
-- Right = gray-hoodie male
+측정 단위는 출처가 붙은 **spoken beat**다.
 
-This failure was resolved by the later 0033/0034 production lock. Do not use it as a reason to return to testing.
+- 모든 AI-written spoken beats ≤ 30%
+- AI가 새로 만든 comedic payoff = 원칙적으로 0%
+- source-derived factual setup은 AI-written으로 계산
+- P001은 `BRIDGE_01` 삭제 후 1/5 = 20%
 
-## Set direction — keep it simple
-Current background direction is basically accepted:
-- plain warm beige wall
-- simple wooden floor
-- one low rectangular wooden table
-- little/no fixed seating
-- no microphones
-- no decorative clutter
+## 성과 담당
 
-A centered simple window OR one small floor lamp may be added later if the room feels too empty, but only after reproducibility is locked. Do not reopen broad interior design now.
+별도 논리 역할 `Distribution & Performance`를 추가한다. 초기에는 ChatGPT가 담당한다.
 
-## Critical reproducibility strategy — UPDATED
-Do **not** regenerate the whole room + three-character composition from textual instructions for every clip if avoidable.
+- 1차 배포: YouTube Shorts
+- 동일 9:16 마스터 교차 배포 후보: TikTok, Instagram Reels
+- 핵심: 시청 선택률/초반 이탈, 평균 시청시간·완주율·재시청, 공유, 댓글, 구독/팔로우 전환
+- 성과 데이터는 GOLD 유형·hook·길이·interaction 방식과 연결해 회차 폴더에 기록
+- 성과 역할은 대사를 자동 재작성하지 않는다. 다음 소재 선택과 실험 가설만 제안한다.
 
-Preferred production grammar:
-1. Create/approve **one canonical 3-person MASTER FIRST-FRAME/STILL** with correct identities, positions, room, table, and style.
-2. Reuse that same master still as the I2V first frame for repeated dialogue clips.
-3. Video prompts should then mostly contain **dialogue + acting**, not repeated long character/set descriptions.
-4. For tighter shots, first try **editorial crop/scale from the master**. Do not generate three separate single shots by default.
-5. Only generate and lock a separate SINGLE/REACTION anchor when a real episode needs a close reaction that crop/scale cannot deliver acceptably.
+## 다음 행동
 
-Reason: this maximizes visual reproducibility and minimizes both prompt length and generation cost.
+1. `episodes/P001/PRODUCTION_PACKAGE.md` 기준으로 Scene B 프롬프트를 확정한다.
+2. 사용자가 Scene B를 TopView에서 1회 생성한다.
+3. ChatGPT가 defect QC한다.
+4. P001 최종 편집 전에 세 voice ID를 배정하고 Scene A/B 발화를 voice-to-voice 변환한다.
+5. 9:16 배포본을 만들고 게시 후 24h/7d 성과를 같은 package에 기록한다.
 
-## Shot policy — UPDATED
-Do not create a large shot system in advance.
+## 응답 규칙
 
-Default:
-- **MASTER**: fixed frontal 3-person shot, reused heavily.
-- **EDIT CROP**: punch in on a character in post when sufficient.
-- **SINGLE / REACTION**: optional, generated only when a specific comedic beat actually needs it.
-
-Therefore the earlier idea of generating CHAR_06 + CHAR_B + gray-hoodie single shots immediately after master lock is **too much by default** and is superseded.
-
-Shot instructions remain short prompt lines, e.g.:
-`Fixed frontal 3-person master shot. Keep the same composition.`
-
-## Historical lock dialogue test
-Korean dialogue:
-1. `373년 묵은 암호를 AI가 풀었대.`
-2. `근데 첫댓이 '좆도 쓸모 없는 거구만' ㅋㅋ`
-3. `ㅋㅋㅋ 틀린 말은 아니야`
-
-Current acting correction:
-- Center speaker delivers line 1 calmly.
-- Left speaker delivers line 2 with amused disbelief.
-- Right speaker delivers line 3 dryly / half-amused.
-- Non-speaking characters should subtly listen: tiny eye/head turns, small smiles/laugh reactions.
-- Keep motion subtle but not frozen; no exaggerated gestures.
-
-## Current operating audit
-
-Authoritative review: `WORKFLOW_AND_CORE_AUDIT_20260903.md`
-
-Exact logical chain:
-`Radar/Source Ingest → Thread Reconstruction/Gold Extraction → Episode Package/Storyboard → User Manual Production → Defect QC/Archive`
-
-Current reality: the upstream agent roles are not independently deployed; ChatGPT currently combines them. The user manually generates, selects, edits, and publishes.
-
-## Next exact action
-1. Keep `260903_0001_video_edit_2387.mp4` as P001 Scene A; do not regenerate.
-2. Read `episodes/P001/SCENE_A_LOCK.md` for the exact used prompt and QC.
-3. Design one Scene B, approximately 8–12 sec, containing the human-comment reversal and social punch.
-4. Add the causal reaction control: no smile/reaction before the trigger phrase.
-5. User manually generates Scene B once in TopView and uploads it for defect QC.
-6. Do not return to set tests or the old six-shot plan.
-
-Active real source: https://m.dcinside.com/board/thesingularity/1382660
-
-Target final duration: approximately 15–22 seconds across 2 scenes.
-
-## Manual production loop
-1. ChatGPT writes exact prompt.
-2. User manually pastes prompt + references into TopView.
-3. User generates once.
-4. User uploads result.
-5. ChatGPT QC.
-6. Move forward unless a real blocker exists.
-
-## Repository
-Canonical repository: **`noru358/talkshow`**
-Default branch: `main`.
-
-## Response continuity rule
-Every talkshow response begins with:
-1. **큰 흐름**
-2. **현재 세부 단계**
-3. **이번 턴 완료조건**
-
-Do not end obvious next steps with permission-seeking such as “원하면 ~해주겠다.” Continue the task directly when the next action is clear.
-
-## Handoff continuity rule
-Every future handoff must preserve:
-- current phase
-- meaningful decisions
-- exact reusable prompt blocks / successful prompt examples
-- character status
-- set spec
-- QC failures and why
-- source/dialogue examples
-- next exact action
-- GitHub persistence status
-
-The core design/prompt library itself must not be summarized away; preserve or update `CORE_DESIGN_AND_PROMPTS.md` whenever a core production rule changes.
+모든 talkshow 응답은 다음으로 시작한다.
+1. 큰 흐름
+2. 현재 세부 단계
+3. 이번 턴 완료조건
