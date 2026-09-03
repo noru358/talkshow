@@ -1,7 +1,7 @@
 # TALKSHOW — VOICE REGISTRY
 
-Updated: 2026-09-03 KST  
-Status: **V2 audition profiles locked / voice IDs not yet assigned**
+Updated: 2026-09-04 KST
+Status: **V2 FREE AUDIO REFERENCES SELECTED AND PACKAGED / OMNI PILOT READY**
 
 This is the single registry for recurring character voices. Once a voice ID is assigned, do not change it between episodes unless a deliberate series-level re-lock is recorded.
 
@@ -14,6 +14,44 @@ Seedance native audio is a performance and lip-sync guide. Final published dialo
 | CHAR_06 | VOICE_CHAR06 | Native Korean woman, 20s/early-30s; bright lively mid register; energetic conversational pace; sincere/confident; ordinary friend, not host/influencer/anime | UNASSIGNED | blocks publish |
 | White T-shirt woman / CHAR_B | VOICE_CHAR_B | Native Korean woman, 20s/early-30s; natural mid register; friendly everyday tone with somewhat elevated energy; skeptical/indignant edge when reacting; not cold/monotone | UNASSIGNED | blocks publish |
 | RIGHT_MASTER_V2 male | VOICE_RIGHT_M | Native Korean man, 20s/early-30s; natural low-mid register; playful everyday Seoul-friend tone; quick social timing; short natural laugh; not announcer/comedy-actor macho | UNASSIGNED | blocks publish |
+
+## TopView free-preview shortlist — 2026-09-04
+
+These are TopView catalog TTS voices, all tagged Korean / young / UGC. Their existing catalog previews were retrieved without generation and consumed 0 credits.
+
+| Role | Candidate A | Candidate B | Candidate C |
+|---|---|---|---|
+| VOICE_CHAR06 | Seoyeon — `dyVV2WrHpfVjbIaIQrq0CnPKWdbD2TeJ` | Subin — `PMPhHkiu6vMXG49XW0MB8uuufifheFCP` | Harin — `LlEOaCUAuXRJLVGeVZ7ekyY6sD66UsSG` |
+| VOICE_CHAR_B | Gaeun — `e4tVV8fAoASfcrdUhQyxlUM1lZiDGHbO` | Jiyeon — `PEGrM7fHiZoZfjB9PPwtO608VolYxZF4` | Minseo — `CfYR3B2tfvVlyHBFO12jX2XF5AMz5brs` |
+| VOICE_RIGHT_M | Minjae — `toybSY6FkYuXYRyTfdxJFqOVmCA7xVOs` | Hyunwoo — `eBW7ibAk49wtENEFAY9EU0r5LSl8rTXm` | Taemin — `E47qyvnuryNYZr8NPwsk4lZ4HwxRY06C` |
+
+Dedicated TopView destination board: `talkshow_voice_audition_v2`.
+
+### User-selected preview winners — 2026-09-04
+
+These are locked as the free audio-reference candidates for the first Omni Reference pilot, not yet as final production voices.
+
+| Screen position | Character | Selected voice | voice_id |
+|---|---|---|---|
+| LEFT | White T-shirt woman / CHAR_B | Gaeun outdoors | `mjd2XButz5NEKBt3YpsbvWiOe7bDAQ8e` |
+| CENTER | CHAR_06 | Harin | `LlEOaCUAuXRJLVGeVZ7ekyY6sD66UsSG` |
+| RIGHT | RIGHT_MASTER_V2 male | Taemin | `E47qyvnuryNYZr8NPwsk4lZ4HwxRY06C` |
+
+### Free audio-reference route — first test
+
+1. Attach the three actual catalog preview MP3 files to Omni Reference.
+2. Map them explicitly: Audio 1 = LEFT/Gaeun outdoors, Audio 2 = CENTER/Harin, Audio 3 = RIGHT/Taemin.
+3. Tell the model to copy timbre only, ignore the preview recording's words, and speak only the written scene dialogue.
+4. Generate one pilot only after explicit user approval for the video credit spend.
+5. QC voice assignment, timbre similarity, exact dialogue and lip sync before declaring a recurring voice lock.
+
+The three preview downloads and packaging consumed 0 credits. Current account snapshot at preparation time: 51.56 credits.
+
+### Compatibility warning
+
+The catalog voice names or IDs written only in prose are not enough to lock a Seedance voice. Omni Reference can instead receive the actual preview audio as a reference anchor, so the free route is tested first. This still must not be described as a final native Seedance voice lock until a generated pilot proves that speaker assignment and timbre remain stable. If the model copies preview wording, swaps speakers or drifts materially, use fixed-ID exact-line TTS/audio replacement as the fallback.
+
+Do not silently switch the production architecture based only on a pleasant catalog preview.
 
 ## Important V2 correction from earlier profile
 
