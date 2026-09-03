@@ -1,7 +1,7 @@
 # CURRENT STATE
 
 Updated: 2026-09-03 KST  
-Status: **P001 Scene A locked / Scene B package next**
+Status: **P001 Scene A locked / Scene B package ready for user generation**
 
 ## 지금의 단일 결론
 
@@ -16,7 +16,7 @@ Status: **P001 Scene A locked / Scene B package next**
 - source: `episodes/P001/SOURCE_PACK.md`
 - Scene A: `260903_0001_video_edit_2387.mp4`, 7.104초, 영상 PASS, 재생성 금지
 - Scene A exact prompt/QC: `episodes/P001/SCENE_A_LOCK.md`
-- Scene B: 8–12초, 인간 원문 반전 + 사회적 펀치
+- Scene B: exact 10초 생성 패키지 완료 — `episodes/P001/SCENE_B_PACKAGE.md`
 - 최종: 약 15–22초, 2 scenes
 - 폐기: 38.5초/6숏 계획, `BRIDGE_01`
 
@@ -72,11 +72,14 @@ Seedance의 회차별 랜덤 음성을 최종 캐릭터 음성으로 수용하�
 
 ## 다음 행동
 
-1. `episodes/P001/PRODUCTION_PACKAGE.md` 기준으로 Scene B 프롬프트를 확정한다.
-2. 사용자가 Scene B를 TopView에서 1회 생성한다.
-3. ChatGPT가 defect QC한다.
-4. P001 최종 편집 전에 세 voice ID를 배정하고 Scene A/B 발화를 voice-to-voice 변환한다.
-5. 9:16 배포본을 만들고 게시 후 24h/7d 성과를 같은 package에 기록한다.
+1. 사용자가 `episodes/P001/SCENE_B_PACKAGE.md`의 프롬프트를 수정 없이 TopView에 붙여 10초로 1회 생성한다.
+2. 사용자가 무편집 원본을 업로드한다.
+3. ChatGPT가 defect-only QC하고 picture lock 여부를 판정한다.
+4. `assets/VOICE_REGISTRY.md`로 세 voice ID를 배정한다.
+5. Scene A/B 발화를 fixed-ID voice-to-voice로 변환한다.
+6. 9:16 최종 편집 후 게시하고 24h/7d 성과를 기록한다.
+
+Scene B 생성에 필요한 입력은 모두 확정되어 있다. 세트 테스트, 캐릭터 테스트, 프롬프트 재작성, 추가 기획으로 돌아가지 않는다.
 
 ## 응답 규칙
 
