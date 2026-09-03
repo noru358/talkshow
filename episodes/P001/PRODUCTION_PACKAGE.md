@@ -1,5 +1,7 @@
 # P001 PRODUCTION PACKAGE — `쓸모없는 암호`
 
+> **CURRENT OVERRIDE — 2026-09-03:** The six-shot 38.5-second plan below is superseded. Do not execute S01–S06 as written. Current structure is 2 scenes / approximately 15–22 seconds. `260903_0001_video_edit_2387.mp4` is locked as Scene A. Exact input prompt and QC: `SCENE_A_LOCK.md`. Only Scene B remains to be designed/generated. The older plan is retained below as production history.
+
 Status: **READY FOR MANUAL TOPVIEW GENERATION**  
 Target: 16:9 / 480p generation / approximately 34–39 sec final / 3 characters  
 Model: Seedance 2.0 Mini  
