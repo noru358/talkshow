@@ -14,7 +14,7 @@ If another document conflicts with this one on the current production method, **
 Final product:
 - Korean internet/community-source talkshow
 - usually 3 characters, but 2 or 4 may appear
-- 30–60 sec short-form / short-mid as the primary target
+- content-driven short-form: usually 15–22 sec for one strong comment chain; 22–35 sec only when the source has enough real beats
 - possible later ~3 min format
 - final episodes are assembled from multiple short AI video clips; do **not** generate 30–180 sec as one continuous AI clip
 
@@ -110,8 +110,8 @@ Default video model:
 Validation baseline:
 - 480p
 - 16:9
-- ~5–6 sec clips
-- use 6–8 sec when Korean dialogue needs more breathing room
+- short clips, usually 7–12 sec
+- prefer 2 dense scenes per simple comment-chain episode; do not split one thin source into six clips
 
 Do not mutilate natural dialogue merely to fit 5 sec.
 
@@ -569,3 +569,51 @@ For the exact active episode / next action, always read:
 - current episode package under `episodes/<ID>/`
 
 As of this file's update, `CURRENT_STATE.md` indicates the project has entered real episode production and points to the active P001 production package.
+
+
+---
+
+# 17. VALIDATED PILOT OPERATING RULES — 2026-09-03
+
+## 17.1 Agent / human split
+
+The intended logical workflow is:
+
+> RADAR/SOURCE INGEST → THREAD RECONSTRUCTION → GOLD EXTRACTION → LIGHT ADAPTATION/CASTING → BEAT·SHOT·PROMPT PACKAGE → USER MANUAL GENERATION/EDIT → DEFECT QC/ARCHIVE
+
+These are logical roles, not proof that independent agents are already implemented. Current pilot execution combines the upstream roles in ChatGPT; the user manually generates, selects, edits, and publishes.
+
+Automate upstream first: detection, source preservation, comment-tree extraction, GOLD candidate tagging, and package drafting. Keep premise selection, final GOLD choice, TopView generation, clip choice, and final edit manual during the pilot.
+
+Full rationale and gap analysis: `WORKFLOW_AND_CORE_AUDIT_20260903.md`.
+
+## 17.2 Validated input stack
+
+`260903_0001_video_edit_2387.mp4` proved this input stack can produce a stable scene:
+- locked 3-person cast-master still
+- the same three character master packs
+- one exact dialogue/acting prompt
+
+Do not add extra set references or shot-family assets unless a real failure requires them.
+
+## 17.3 Content-driven duration
+
+- one strong comment chain: 15–22 sec, normally 2 scenes
+- richer source with multiple genuine GOLD beats: 22–35 sec
+- never pad with explanation, lesson, repeated reaction, or outro
+- do not treat 30–60 sec as a quota
+
+## 17.4 Causal reaction timing
+
+```text
+Do not anticipate the joke.
+Keep the listener completely neutral until the trigger phrase is actually spoken.
+Begin the reaction only after hearing the trigger phrase.
+Reactions must be staggered and causally timed, never simultaneous.
+```
+
+The order should read as trigger → first listener reaction → second listener reaction. A character must not smile early merely because the model knows the next line.
+
+## 17.5 Visual variety without reopening the shot system
+
+Default remains the fixed 3-person master plus post-production crops. Allow at most one episode-specific explanatory card or cutaway when the premise cannot be understood quickly without it. Do not create decorative B-roll or new backgrounds for every beat.
