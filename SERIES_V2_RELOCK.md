@@ -136,15 +136,19 @@ The V2 relock does NOT change the editorial source discipline:
 - AI-invented comedic payoff should remain approximately 0%
 - performance/distribution learning should change selection/experiments, not automatically rewrite dialogue into generic optimized copy
 
-## Current execution order
+## Current execution order — updated 2026-09-04
 
-1. Finalize/generate `RIGHT_MASTER_V2` from `assets/RIGHT_MASTER_V2_SPEC.md`.
-2. Generate the four empty set masters from `assets/SET_MASTER_V2_PACK.md`.
-3. QC and lock those five visual anchors.
-4. Build four three-character set-specific cast stills using the locked set image + three character packs.
-5. Audition and lock three fixed voice IDs.
-6. Apply `REACTION_RULES_V2` to regenerated P001 clips or the next actual production clip.
-7. Resume distribution master (9:16), publishing and performance loop.
+1. ~~Finalize/generate `RIGHT_MASTER_V2`.~~ **DONE**
+2. ~~Generate/QC the four recurring visual environments.~~ **DONE**
+3. ~~Build and QC four three-character set-specific cast stills.~~ **DONE**
+4. Preserve canonical binaries and SHA256 records in `assets/V2_VISUAL_LOCK_20260904.md`. **DONE**
+5. Review the free 3+3+3 TopView voice preview shortlist. **DONE — Gaeun outdoors / Harin / Taemin selected**
+6. Package the three selected free catalog previews as audio references. **DONE — 0 credits**
+7. Prepare P001 Scene B as the first V2 Omni Reference pilot. **DONE — not submitted**
+8. Obtain explicit user approval immediately before the one credit-consuming video generation. **ACTIVE**
+9. QC speaker assignment, timbre similarity, exact dialogue and V2 reaction grammar.
+10. Lock the free reference-audio route if it passes; use exact-line TTS/audio replacement only if it fails materially.
+11. Resume distribution master (9:16), publishing and performance loop.
 
 ## What must NOT be lost in later sessions
 
