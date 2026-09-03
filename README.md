@@ -10,19 +10,27 @@
 1. `CURRENT_STATE.md` — 지금 단계와 바로 다음 행동
 2. `PROJECT_BIBLE.md` — 바뀌기 어려운 편집 원칙
 3. `PRODUCTION_PIPELINE.md` — 역할·게이트·성과 루프
-4. `CORE_DESIGN_AND_PROMPTS.md` — 시각/음성/프롬프트 락
-5. `episodes/Pxxx/` — 회차별 source, prompt, QC, performance
+4. `CORE_DESIGN_AND_PROMPTS.md` — 기존 reusable visual/voice/prompt grammar
+5. `SERIES_V2_RELOCK.md` — 현재 V2에서 의도적으로 재오픈한 visual/voice/reaction baseline의 상세 변경 기록
+6. `episodes/Pxxx/` — 회차별 source, prompt, QC, performance
 
-충돌하면 위 순서를 따른다. 과거 결정은 Git history로 확인한다.
+충돌하면 `CURRENT_STATE.md`가 현재 행동을 우선 통제한다. `SERIES_V2_RELOCK.md`는 V2에서 기존 CORE의 sparse-set / restrained-performance 가정과 충돌하는 부분을 의도적으로 supersede한다. 과거 결정은 Git history와 P001 V1 파일로 보존한다.
 
 ## 현재
 
-- P001 Scene A: 영상 잠금, 재생성 금지
-- 다음: `episodes/P001/SCENE_B_PACKAGE.md` 그대로 Scene B 10초 1회 수동 생성
-- 생성: Seedance 2.0 Mini, 잠긴 16:9 cast-master 재사용
-- 배포: 9:16 편집본
-- 음성: `assets/VOICE_REGISTRY.md`의 고정 voice ID로 voice-to-voice 변환; 실제 ID는 P001 게시 전 배정
-- 사용자: TopView 생성·CapCut/Resolve 편집·게시
-- ChatGPT: source/GOLD/package/prompt, defect QC, performance learning
+**SERIES V2 RELOCK ACTIVE**
 
-세부 상태: [CURRENT_STATE.md](CURRENT_STATE.md)
+- P001 V1 Scene B QC는 현재 건너뜀
+- P001 V1 Scene A/B 파일은 보존하되 필요하면 V2 기준으로 다시 생성 가능
+- Step 1: `assets/RIGHT_MASTER_V2_SPEC.md` — 기존 남캐 identity 유지, 2030 Seoul daily/minimal styling으로 hair/outfit 업데이트
+- Step 2: `assets/SET_MASTER_V2_PACK.md` — empty set 4종 A/B/C/D 생성 및 lock
+- set pool: Seoul officetel/home / convenience-store-front / Hangang / Seoul villa rooftop
+- four set 모두 사용; A=main, B=signature, C/D=variation
+- 이후 각 locked set + 3 character packs → set-specific 3-person cast still → fixed-first-frame I2V
+- voice: `assets/VOICE_REGISTRY.md` V2 audition profiles; fixed voice IDs 아직 미배정
+- reaction V2: sequential causality는 유지하되 facial/head/torso energy 및 one/two-hand gestures, brief fist gesture까지 확대
+- 생성: 16:9 master
+- 배포: 9:16 Shorts/Reels/TikTok master
+
+세부 상태: [CURRENT_STATE.md](CURRENT_STATE.md)  
+V2 변경 이유/락: [SERIES_V2_RELOCK.md](SERIES_V2_RELOCK.md)
