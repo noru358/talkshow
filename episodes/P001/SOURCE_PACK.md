@@ -42,6 +42,14 @@ Not allowed:
 | GOLD_01 | `좆도 쓸모없는 거구만` | Comment | Dismissal |
 | GOLD_02 | `사람들이 저기에 시간을 안들이게 되었으니 엄청 쓸모있음` | Reply comment | Reversal |
 | GOLD_03 | `병신 ㅋㅋ` | Thread reaction | Social punch |
-| BRIDGE_01 | `아니 씨발 그 뜻이 아니라—` | Minimal AI bridge | Failed recovery |
+| BRIDGE_01 | `아니 씨발 그 뜻이 아니라—` | AI-authored bridge | **REJECTED / do not use** |
 | GOLD_04 | `천재노 ㅋㅋㅋ` | Thread reaction | Final sting |
 
+
+## Final P001 provenance decision — 2026-09-03
+
+Final spoken beats: SETUP_01 + GOLD_01 + GOLD_02 + GOLD_03 + GOLD_04.  
+Rejected: BRIDGE_01.
+
+AI-written spoken-beat share: 1/5 = 20%.  
+AI-original comedic payoff: 0/4 = 0%.
