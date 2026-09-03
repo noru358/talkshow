@@ -110,3 +110,15 @@ Reactions must be staggered and causally timed, never simultaneous.
 ## Edit note
 
 The prompt described a 10-second trial, but prompt prose does not control TopView duration. The exported clip is 7.104 seconds. Set the duration in the TopView UI for future clips. Scene A remains usable at its actual length.
+
+## Final-audio status — voice lock
+
+The picture remains `PRODUCTION PASS / DO NOT REGENERATE`.
+
+The Seedance-generated CENTER and LEFT voices are **performance guides, not final recurring character voices**. Before P001 publication:
+- split CENTER and LEFT speech segments,
+- convert each to the character's fixed multilingual voice ID while preserving timing/delivery,
+- replace audio without changing the locked picture,
+- re-check lip timing, BLEEP placement and loudness.
+
+This is an audio post-process, not a Scene A regeneration.
