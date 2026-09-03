@@ -1,171 +1,159 @@
 # CURRENT STATE
 
 Updated: 2026-09-04 KST
-Status: **SERIES V2 VISUALS LOCKED — FREE 3-VOICE REFERENCE PACK READY / FIRST OMNI PILOT AWAITING USER APPROVAL**
+Status: **V2 BASELINE ESTABLISHED — FIRST COMPLETE EPISODE P002 STORYBOARD READY / OPENING STILL IS NEXT**
 
 ## 지금의 단일 결론
 
-P001 V1의 sparse-room / restrained-performance baseline을 최종 시리즈 형태로 밀지 않는다.
+P001 Scene B를 또 하나의 격리된 파일럿으로 생성하는 작업은 현재 active next action이 아니다.
 
-사용자 판단으로 시리즈 기본형을 한 번 재락한다. 이유는 V1이 재현성은 확보했지만 시각적으로 허전하고 저예산처럼 보였고, gray-hoodie male styling과 보이스/리액션 에너지도 반복 캐스트 채널 기준으로 부족했기 때문이다.
+사용자 판단대로 이제 테스트를 위한 테스트를 중단하고, 실제 공개 가능한 짧은 완성본을 만드는 과정에서 동시에 visual / voice / reaction / editing grammar를 검증한다.
 
-V2 기준과 변경 이유의 전체 기록은 `SERIES_V2_RELOCK.md`가 현재 작업의 상세 권위 문서다.
+현재 권위 문서:
+- V2 series baseline: `SERIES_V2_RELOCK.md`
+- P002 source provenance: `episodes/P002/SOURCE_PACK.md`
+- P002 complete storyboard: `episodes/P002/FULL_EPISODE_PACKAGE.md`
 
-## 큰 파이프라인은 유지
+## 큰 파이프라인
 
 `Radar/Source → Thread/Gold → Episode Package → User Production → Defect QC → Distribution/Performance Learning`
 
-콘텐츠 원천성/성과 루프는 유지하고, 현재는 그 안의 **반복 제작 visual/voice/performance baseline**만 재락 중이다.
+콘텐츠 원천성/성과 루프는 유지한다.
 
-## P001 V1 상태 — 보존하되 현재 next action 아님
+## V2 recurring direction
 
-기존 파일은 삭제/덮어쓰기 금지. Git history가 아니라 실제 에피소드 증거로 보존한다.
+### Cast
+- LEFT: CHAR_B / white-T-shirt woman
+- CENTER: CHAR_06
+- RIGHT: recurring male identity
 
-- source: `episodes/P001/SOURCE_PACK.md`
-- Scene A V1: `260903_0001_video_edit_2387.mp4`, 기존 PASS 기록 유지
-- Scene A V1 exact prompt/QC: `episodes/P001/SCENE_A_LOCK.md`
-- Scene B V1 package: `episodes/P001/SCENE_B_PACKAGE.md`
-- Scene B QC는 사용자 지시로 현재 건너뜀
-- Scene A의 과거 `재생성 금지`는 V1 내부 기록일 뿐이며, V2에서는 필요하면 P001 씬을 얼마든 다시 생성할 수 있음
+Selected free voice references:
+- LEFT: Gaeun outdoors
+- CENTER: Harin
+- RIGHT: Taemin
 
-## V2 visual architecture
+### Set pool
+1. `SET_A_HOME` — main/default
+2. `SET_B_CONVENIENCE` — signature/high-energy
+3. `SET_C_HANGANG` — variation/special
+4. `SET_D_ROOFTOP` — variation/special
 
-> **CHARACTER MASTER PACKS → four EMPTY SET MASTERS → per-set 3-person CAST STILL → fixed-first-frame I2V → edit/crop**
+### Reaction grammar
+V2 is intentionally more visible and energetic than V1.
 
-### 반복 캐스트
-- CHAR_B / white-T-shirt woman
-- CHAR_06
-- 기존 gray-hoodie male의 동일 identity를 유지하되 hair/outfit만 바꾼 `RIGHT_MASTER_V2`
-
-### RIGHT_MASTER_V2
-Exact spec: `assets/RIGHT_MASTER_V2_SPEC.md`
-
-잠금 방향:
-- 동일 얼굴/비율/그림체 유지
-- black natural Korean 6:4 side part, medium-short, neat tapered sides
-- dark brown ribbed cardigan
-- plain white crew-neck T-shirt
-- charcoal wide-straight trousers
-- dark low-profile sneakers
-- no glasses / no bag / no bag strap / no visible logo
-- ordinary but put-together Seoul man in late 20s/early 30s; not idol, not luxury, not costume streetwear
-
-### Four-set pool — 전부 사용
-Exact prompts: `assets/SET_MASTER_V2_PACK.md`
-
-1. `SET_A_HOME` — Seoul studio/officetel living room — **main/default**
-2. `SET_B_CONVENIENCE` — Korean convenience-store-front table — **signature/high-energy**
-3. `SET_C_HANGANG` — Hangang night picnic — **variation/special**
-4. `SET_D_ROOFTOP` — Seoul villa rooftop — **variation/special**
-
-세트 4개 중 하나만 고르는 계획이 아니다. 모두 empty master로 생성/락하고 회차별로 선택한다.
-
-### Reproducibility rules
-- 16:9 generation master 유지
-- 배경 prose 재생성 대신 locked empty set image를 strict reference로 사용
-- 각 세트마다 set image + three character packs로 canonical 3-person cast still 생성
-- 이후 해당 still을 I2V exact first frame으로 재사용
-- 4세트 모두 비슷한 face scale / LEFT-CENTER-RIGHT screen zones / medium-wide camera grammar 유지
-- 상체와 손 제스처 공간을 확보
-
-## Voice V2
-Registry: `assets/VOICE_REGISTRY.md`
-
-- CHAR_B: 평범한 2030 한국 여성 생활톤 + 기존 skeptical/indignant 결은 유지하되 **더 생기 있게**, cold/monotone 금지
-- CHAR_06: 기존 calm 방향을 폐기하고 **더 밝고 활기찬 conversational energy**
-- RIGHT_MASTER_V2: ordinary 2030 Korean male low-mid everyday voice, playful/quick social timing, natural short laugh
-- final voice IDs 아직 UNASSIGNED
-- Seedance native audio는 계속 performance/lip-sync guide; 최종은 fixed-ID voice-to-voice
-
-## Reaction / acting V2
-V1보다 명확히 크게 간다.
-
-유지:
-- punchline을 미리 예상하지 않기
-- 인과적/순차적 반응
-- 모두 동시에 같은 반응 금지
-
-새로 허용/권장:
-- 더 큰 eye movement / head turn / facial reaction
+Allowed/desired when causally motivated:
+- readable eye changes and head turns
+- visible facial reactions
 - short torso lean/recoil
 - shoulder bounce
-- one-hand gesture
-- two-hand gesture
-- brief raised fist / small celebratory fist
+- one/two-hand gestures
 - open-palmed disbelief
-- brief table tap if geometry remains stable
+- compact celebratory fist
 
-금지:
-- full-body flailing
-- constant gesturing
-- extreme mouth opening / eye squeeze deformation
-- hand/neck/body warping
+Avoid simultaneous mass reaction, constant gesturing, full-body flailing and anatomy deformation.
 
-원칙: **bigger and funnier, but causally staged and model-safe.**
+## Important first-frame clarification — NEW
 
-## 콘텐츠/성과 락 — 변경 없음
+The fixed first frame is the literal visual start of **each generated AI clip**.
 
-- real Korean community posts/comments primary source
-- AI-written spoken beats <= 30%
-- AI-created comedic payoff approximately 0%
-- generation master 16:9 / distribution master 9:16
-- first distribution: YouTube Shorts; Reels/TikTok cross-post candidates
-- Distribution & Performance는 다음 소재/실험가설에 피드백하되 자동 대사 최적화로 수렴시키지 않음
+It is NOT a rule that the finished episode must always begin from one universal resting cast pose.
 
-## 2026-09-04 visual completion
+New real-episode architecture:
 
-`assets/V2_VISUAL_LOCK_20260904.md` is now the canonical visual lock record.
+> **canonical cast still → minimum shot-specific derived first-frame stills → fixed-first-frame I2V clips → editorial hard cuts / crop / punch-in**
 
-- `RIGHT_MASTER_V2` master pack locked
-- four set-specific 16:9 cast stills locked
-- canonical binaries preserved under `assets/v2_locked/`
-- HOME / CONVENIENCE / HANGANG / ROOFTOP usage conditions recorded
-- do not return to empty-set or cast-still regeneration without a newly identified hard defect
+If a clip must start with CENTER already holding a smartphone, create one canon-derived opening still with only that starting state changed. Do not waste video time asking the model to invent the phone and perform a long reach from the neutral master.
+
+Do not automatically chain the last frame of Clip 1 into Clip 2; that can compound drift. Prefer a hard cut between canon-derived states unless continuous physical action actually requires last-frame chaining.
+
+## Current active visual authority
+
+For P002, use the user-supplied 2026-09-04 convenience-store-front three-person image as the active exact visual authority.
+
+It controls what is visibly present in this episode: faces, clothing, drawing style, seating, table, props and set geometry.
+
+If older prose in the repository conflicts with this current locked image, do not force the stale prose back onto the image for P002.
+
+## Repository integrity finding
+
+During the 2026-09-04 GitHub inspection, the repository contained text claiming that `assets/V2_VISUAL_LOCK_20260904.md` and canonical binaries under `assets/v2_locked/` had been preserved, but those paths were not found on the inspected `main` tree.
+
+Therefore:
+- do not claim those visual binaries are safely mirrored in GitHub;
+- the current convenience image is an external/session visual authority until a binary upload path is actually completed;
+- this discrepancy is now explicitly recorded rather than hidden by stale handoff prose.
+
+## P001 status
+
+Preserve P001 as historical evidence.
+
+- source: `episodes/P001/SOURCE_PACK.md`
+- V1 Scene A lock remains evidence
+- V1 Scene B package remains evidence
+- V2 Omni reference pilot package remains prepared evidence
+- **do not spend credits on the P001 Omni pilot as the current next step**
+
+## P002 — first complete episode
+
+Source/storyboard agent selected a real Korean community source about AI-era entry-level developer hiring.
+
+Source pack:
+- `episodes/P002/SOURCE_PACK.md`
+
+Complete production concept:
+- about 16 sec total
+- 2 x 8 sec Seedance clips
+- SET_B_CONVENIENCE visual authority
+- Clip 1 integrates the topic-opening device rather than adding a separate formal intro clip
+- Clip 2 delivers the later source reactions
+- 16:9 generation master → 9:16 editorial distribution master
+- subtitles/localization added in post, not baked into AI generation
+
+### Opening device
+Use the CENTER character + smartphone as a recurring internet-source device, but avoid formal canned hosting such as `오늘의 주제!` by default.
+
+Preferred behavior:
+- visual routine repeats
+- spoken hook varies naturally: `야 이거 봐`, `이거 봤어?`, or direct source claim
+
+This gets to the content faster and feels more like friends talking than a TV host segment.
 
 ## 바로 다음 행동
 
-### Step 1 — USER REVIEW OF FREE VOICE PREVIEWS — DONE
-- LEFT / CHAR_B: Gaeun outdoors
-- CENTER / CHAR_06: Harin
-- RIGHT / RIGHT_MASTER_V2: Taemin
-- this review consumed 0 credits
+### Step 1 — create `P002_OPENING_STILL`
+From the user's current convenience image:
+- change only CENTER's starting pose so she already holds a plain smartphone at chest height and looks at it;
+- no readable screen text;
+- preserve every other character, face, outfit, prop, table, chair, set element, composition and drawing style.
 
-### Step 2 — FREE REFERENCE PACK — DONE
-- LEFT / CHAR_B: Gaeun outdoors catalog preview
-- CENTER / CHAR_06: Harin catalog preview
-- RIGHT / RIGHT_MASTER_V2: Taemin catalog preview
-- packaged as `TALKSHOW_V2_SELECTED_VOICE_REFERENCE_PACK.zip`
-- no new TTS generation; 0 credits consumed
+### Step 2 — generate P002 Clip 1 once
+- Seedance 2.0 Mini
+- 480p
+- 16:9
+- 8 sec
+- generation count exactly 1
+- use the selected voice references if the active TopView route supports them cleanly
+- QC this as actual production footage, not a pilot
 
-### Step 3 — FIRST OMNI REFERENCE PILOT — READY / NOT SUBMITTED
-- authority: `episodes/P001/V2_OMNI_REFERENCE_PILOT_PACKAGE.md`
-- use the V2 HOME cast still plus the three free catalog audio previews
-- generate P001 Scene B once only after explicit user approval
-- first QC determines whether free audio references are sufficient voice anchors
-- do not buy exact-line TTS before this test proves it is necessary
+### Step 3 — if no hard blocker, generate Clip 2 once
+Use the original convenience cast still / canon-derived neutral state as the new first frame and make an intentional editorial cut.
 
-### Step 4 이후
-- lock the reference-audio route if speaker assignment and timbre are stable
-- use exact-line TTS/audio replacement only as a fallback for material drift
-- 9:16 edit → publish → 24h/7d learning
-
-## 현재 실제 blocker
-
-The visual and free-voice-pack blockers are cleared. The only active blocker is explicit user approval immediately before one credit-consuming Omni Reference video generation. Voice names in prose are not treated as a lock; the three actual audio files must be attached and mapped to LEFT/CENTER/RIGHT.
+### Step 4 — assemble publishable 9:16 master
+- editorial punch-ins instead of AI camera moves
+- Korean/English subtitle treatment in post
+- no explanatory outro
+- publish → 24h / 7d performance learning
 
 ## Mandatory pre-generation inheritance check
 
-Before presenting or submitting any scene prompt, compare the executable prompt against every active series-level lock. Do not assume that a rule stored in a core document will influence generation unless it is written directly into the scene prompt.
-
-Required checks:
-- visual identity / set / position lock is present in the executable prompt
-- selected voice-reference files and speaker mapping are present
-- `REACTION_RULES_V2` is translated into scene-specific visible actions, not generic wording
-- reactions remain causally staggered, but are visibly larger than V1 at the actual framing scale
-- the prompt does not reintroduce superseded V1 phrases such as `subtle acting`, `small reactions`, or blanket `no large gestures`
-- generation count, model, resolution, duration and credit gate match the current approved task
-
-If any check fails, revise the execution package before requesting approval or spending credits.
+Before presenting or submitting any scene prompt:
+- active episode image is the visual authority
+- voice-reference speaker mapping is explicit
+- V2 reaction rules are translated into visible scene-specific actions
+- first frame matches the first visible action of that clip
+- no superseded V1 phrases such as `subtle acting`, `small reactions`, or blanket `no large gestures`
+- model / resolution / duration / generation count match the approved task
+- no unnecessary extra pilot or reference test is inserted before the publishable episode
 
 ## 응답 규칙
 
