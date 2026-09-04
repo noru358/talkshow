@@ -15,6 +15,7 @@
 6. `CORE_DESIGN_AND_PROMPTS.md` — reusable historical/current grammar; V2와 충돌하는 sparse-set / restrained-performance / universal-first-pose 부분은 newer V2 docs가 supersede
 7. `MASTER_STYLE_PROMPT.md` — 캐릭터/배경 생성·리마스터 시 쓰는 authoritative copy-paste visual style lock. 개별 캐릭터 identity reference가 generic style 문구보다 우선한다.
 8. `episodes/Pxxx/` — 회차별 source, prompt, QC, performance. active episode package는 그 회차 실행 세부를 통제한다.
+9. `WORKFLOW_PROTOCOL.md` — 환경/모델 전환 시 상태 보존과 `갱신` 절차.
 
 충돌하면 `CURRENT_STATE.md`가 현재 행동을 우선 통제한다. Performance/audio/animation execution은 `PERFORMANCE_AUDIO_ARCHITECTURE.md`를 따른다. 캐릭터 얼굴·눈·머리 등 identity는 해당 active reference image가 일반 스타일 문구보다 우선한다. 과거 결정은 Git history와 P001/P002 evidence로 보존한다.
 
@@ -65,3 +66,18 @@ Performance/audio architecture: [PERFORMANCE_AUDIO_ARCHITECTURE.md](PERFORMANCE_
 V2 baseline: [SERIES_V2_RELOCK.md](SERIES_V2_RELOCK.md)  
 복붙용 마스터 스타일: [MASTER_STYLE_PROMPT.md](MASTER_STYLE_PROMPT.md)  
 P002 active package: [episodes/P002/FULL_EPISODE_PACKAGE.md](episodes/P002/FULL_EPISODE_PACKAGE.md)
+
+
+## 공통 작업 지속성
+
+ChatGPT ↔ Claude ↔ 로컬 환경 전환 규칙은 `WORKFLOW_PROTOCOL.md`를 따른다.
+
+사용자가 **"갱신"**이라고 하면 단순 handoff 파일을 새로 만드는 것이 아니라:
+- 현재 세션 결정을 기존 권위 문서에 정합성 있게 반영;
+- CURRENT_STATE를 마지막에 갱신;
+- 필요한 실제 자산/실행 근거의 보존 여부 확인;
+- commit/push;
+- remote refetch 검증;
+- AutoPipeline parent가 존재하면 child submodule pointer까지 갱신
+
+을 한 묶음으로 수행한다.
