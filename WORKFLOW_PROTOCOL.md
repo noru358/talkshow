@@ -123,6 +123,29 @@ If visual identity depends on a reference image:
 
 If the canonical visual reference is unavailable in the current environment, stop production generation rather than inventing the style from text.
 
+## 7.5 Generic media-conditioning preflight
+
+This project follows the parent AutoPipeline MEDIA_INPUT_CONTRACT for reference-dependent generation.
+
+Do not hard-code TopView asset names, character names, or current episode filenames into orchestration logic.
+Represent each dependency as data:
+- requirement_id;
+- role;
+- media_type;
+- source_id;
+- conditioning;
+- required.
+
+The runtime/provider adapter supplies capability information and actual supplied-media evidence.
+
+MUST_SUPPLY_MEDIA fails closed if:
+- the current provider cannot accept explicit media;
+- the media type is unsupported;
+- the declared source was not actually supplied;
+- integrity evidence fails when required.
+
+This applies equally to visual identity, first-frame anchors, voice references, dialogue/timing audio, and future media dependencies.
+
 ## 8. Environment portability
 
 Use repository-relative paths in canonical docs.
