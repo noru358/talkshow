@@ -59,6 +59,30 @@ Status: **CURRENT / manual production**
 - 9:16 edit plan
 - voice segment plan
 
+## 3.5 Generic media preflight
+
+Before any image/video/audio generation step, map project-specific dependencies into the AutoPipeline MEDIA_INPUT_CONTRACT model.
+
+Examples for Talkshow:
+- locked opening still -> role=first_frame, media_type=image;
+- recurring character master / master pack -> role=character_identity, media_type=image;
+- fixed voice reference -> role=voice_identity, media_type=audio;
+- whole-scene dialogue master used as performance/timing authority -> role=timing_audio, media_type=audio.
+
+For each actual provider call:
+1. declare requirements;
+2. verify the chosen renderer/provider supports the required media types and explicit inputs;
+3. record which exact sources were actually supplied;
+4. authorize only after required MUST_SUPPLY_MEDIA items have supplied evidence.
+
+A file being described in a prompt or merely available in Git/chat is not equivalent to provider conditioning.
+
+If a provider cannot accept a required input:
+- route to another capable provider/adapter; or
+- block the step.
+
+Do not generate once and hope QC catches identity/style/voice drift afterward.
+
 ## 4. Manual I2V
 
 - Seedance 2.0 Mini / 480p / 16:9
