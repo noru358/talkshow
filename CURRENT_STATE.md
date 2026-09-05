@@ -260,3 +260,18 @@ Older prose once claimed canonical binaries under `assets/v2_locked/`; that clai
 3. 이번 턴 완료조건
 
 Near the top also retain the concise fixed checkpoint so long sessions do not lose the production priorities.
+
+## Generic media preflight checkpoint
+
+Talkshow now adopts the same AutoPipeline project-agnostic media-conditioning contract used by other children.
+
+Before the next P002 production generation, requirements must be declared as data rather than implicit UI assumptions. At minimum, when applicable:
+- locked opening still / first frame;
+- character identity masters;
+- dialogue master timing audio;
+- fixed voice references for any stage that consumes them.
+
+Provider capability and actual supplied evidence must be checked before generation.
+If the chosen provider cannot accept a required media input, switch provider/adapter or block; prompt-only approximation is not an acceptable fallback.
+
+This does not claim that the currently referenced session-local P002 images/audio have been Git-preserved. Availability and supplied-to-provider are separate facts.
